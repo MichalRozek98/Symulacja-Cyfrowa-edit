@@ -85,36 +85,35 @@ void Simulation::Execute()
 
       if (network_->return_waiting_if_channel_is_busy() == 0)
       {
-        if (!channel_of_network_->return_if_is_channel_busy(logger_))
-        {
-          if (is_any_packet_in_buffers && !is_retransmission_)
-          {
-            if (network_->CheckProbabilityPT(logger_))
-            {
-              StartTransmission();
-              network_->set_transmission_clock(rand() % transmission_packet_time_max_);
-              network_->set_event_triggered(false);
-            }
-          }
+        waiting_channel_busy_ = false;
+      }
+      else
+      {
+        waiting_channel_busy_ = true;
+        network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy);
+      }
 
-          if (network_->return_waiting_random_time_rctpk() == 0)
-          {
-            if (is_retransmission_)
-            {
-              if (network_->CheckProbabilityPT(logger_))
-              {
-                Retransmission();
-                network_->set_retransmission_clock(rand() % retransmission_packet_time_max_);
-                network_->set_event_triggered(false);
-                network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max);
-              }
-            }
-          }
-        }
-        else
-        {
-          network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy);
-        }
+      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_) && network_->CheckProbabilityPT(logger_))
+      {
+          StartTransmission();
+          network_->set_transmission_clock(rand() % transmission_packet_time_max_);
+          network_->set_event_triggered(false);
+      }
+      else if (!network_->CheckProbabilityPT(logger_))
+      {
+
+      }
+
+      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_) && network_->CheckProbabilityPT(logger_))
+      {
+          Retransmission();
+          network_->set_retransmission_clock(rand() % retransmission_packet_time_max_);
+          network_->set_event_triggered(false);
+          network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max);
+      }
+      else if (!network_->CheckProbabilityPT(logger_))
+      {
+
       }
     }
 
@@ -251,5 +250,6 @@ void Simulation::Initialize()
   network_->set_event_triggered(false);
   channel_of_network_->set_status_of_colission(false);
   is_retransmission_ = false;
+  waiting_channel_busy_ = false;
   which_transmitter_is_sending = -1;
 }

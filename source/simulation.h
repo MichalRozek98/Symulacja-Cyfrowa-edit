@@ -39,6 +39,7 @@ private:
   size_t ack_notification_send_time_max = 9;
   size_t which_transmitter_is_sending = -1;
   bool is_retransmission_ = false;
+  bool waiting_channel_busy_ = false;
 
 };
 
