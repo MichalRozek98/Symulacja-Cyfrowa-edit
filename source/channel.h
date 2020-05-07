@@ -15,7 +15,7 @@ public:
   // get the packet from bufor (or packet which is sending again) and send to receiver
  
   void CheckForCollision(Logger* logger);
-  bool return_if_is_channel_busy(Logger* logger);
+  bool return_if_is_channel_busy(Logger* logger, bool was_written);
 
   std::vector<Packet*>& ReturnPacketInProgress();
 

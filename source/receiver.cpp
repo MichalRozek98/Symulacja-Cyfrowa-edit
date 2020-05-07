@@ -61,14 +61,14 @@ bool Receiver::ReceivePacketACK(Packet* receive_packet, Logger* logger, bool col
     packets_received_.push_back(receive_packet); // push the vector to vector of received packets
     this->ack_notification_ = true;
   }
-  else if(this->TerProbabilityOfNotCorrectReceived())
-  {
-    logger->Error("Packet with id: " + std::to_string(receive_packet->return_packet_id()) + " wasn't correctly received from Transmitter: " + std::to_string(this->ReturnIdReceiver()) + " because of TER...");
-    this->ack_notification_ = false;
-  }
   else if(colission)
   {
     logger->Error("Packet with id: " + std::to_string(receive_packet->return_packet_id()) + " wasn't correctly received from Transmitter: " + std::to_string(this->ReturnIdReceiver()) + " because of Colission...");
+    this->ack_notification_ = false;
+  }
+  else
+  {
+    logger->Error("Packet with id: " + std::to_string(receive_packet->return_packet_id()) + " wasn't correctly received from Transmitter: " + std::to_string(this->ReturnIdReceiver()) + " because of TER...");
     this->ack_notification_ = false;
   }
 

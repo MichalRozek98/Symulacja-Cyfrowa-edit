@@ -42,7 +42,8 @@ public:
   size_t return_waiting_random_time_rctpk() { return waiting_random_time_rctpk_; };
   bool return_stepwise() { return stepwise_; };
 
-  bool CheckProbabilityPT(Logger* logger);
+  bool CheckProbabilityPT(Logger* logger, bool was_written);
+  bool WaitForNextGap(Logger* logger);
 
 
 private:

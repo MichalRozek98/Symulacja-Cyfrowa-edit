@@ -30,16 +30,20 @@ void Channel::CheckForCollision(Logger* logger)
   }
 }
 
-bool Channel::return_if_is_channel_busy(Logger* logger)
+bool Channel::return_if_is_channel_busy(Logger* logger, bool was_written)
 {
   if (packets_in_progress_.size() == 0) // simple method of checking if was an collision in channel
   {
+    if(!was_written)
     logger->Information("Channel is empty...");
+
     is_channel_busy_ = false;
   }
   else if (packets_in_progress_.size() >= 1)
   {
+    if (!was_written)
     logger->Information("Channel is busy...");
+
     is_channel_busy_ = true;
   }
 

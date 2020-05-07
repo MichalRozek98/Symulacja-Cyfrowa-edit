@@ -34,10 +34,11 @@ private:
   size_t generation_packet_time_max_ = 15;
   size_t transmission_packet_time_max_ = 28;
   size_t retransmission_packet_time_max_ = 27;
-  size_t waiting_time_when_channel_is_busy = 5;
-  size_t waiting_random_rctpk_time_max = 17;
-  size_t ack_notification_send_time_max = 9;
-  size_t which_transmitter_is_sending = -1;
+  size_t waiting_time_when_channel_is_busy_ = 5;
+  size_t waiting_time_when_channel_is_busy_pt_ = 10;
+  size_t waiting_random_rctpk_time_max_ = 17;
+  size_t ack_notification_send_time_max_ = 9;
+  size_t which_transmitter_is_sending_ = -1;
   bool is_retransmission_ = false;
   bool waiting_channel_busy_ = false;
 

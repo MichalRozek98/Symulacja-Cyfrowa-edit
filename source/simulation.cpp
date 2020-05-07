@@ -44,19 +44,17 @@ void Simulation::Execute()
         network_->set_event_triggered(false);
       }
 
-      channel_of_network_->CheckForCollision(logger_);
-
       if (network_->return_transmission_clock() == 0)
       {
         AckNotification();
-        network_->set_ack_notification_clock(rand() % ack_notification_send_time_max);
+        network_->set_ack_notification_clock(rand() % ack_notification_send_time_max_);
         network_->set_event_triggered(false);
       }
 
       if (network_->return_retransmission_clock() == 0)
       {
         AckNotification();
-        network_->set_ack_notification_clock(rand() % ack_notification_send_time_max);
+        network_->set_ack_notification_clock(rand() % ack_notification_send_time_max_);
         network_->set_event_triggered(false);
       }
 
@@ -65,7 +63,6 @@ void Simulation::Execute()
         EndTransmission();
         network_->set_event_triggered(false);
       }
-
 
       // checking all buffers in all transmitters if is any packet to send
       bool is_any_packet_in_buffers = false;
@@ -86,34 +83,44 @@ void Simulation::Execute()
       if (network_->return_waiting_if_channel_is_busy() == 0)
       {
         waiting_channel_busy_ = false;
+        network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_);
       }
       else
       {
         waiting_channel_busy_ = true;
-        network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy);
       }
 
-      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_) && network_->CheckProbabilityPT(logger_))
+      channel_of_network_->CheckForCollision(logger_);
+
+      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false) )
       {
-          StartTransmission();
-          network_->set_transmission_clock(rand() % transmission_packet_time_max_);
+         StartTransmission();
+         network_->set_transmission_clock(rand() % transmission_packet_time_max_);
+         network_->set_event_triggered(false);
+      }
+      else if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true) )
+      {
+        if (network_->WaitForNextGap(logger_))
+        {
+          network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_pt_);
           network_->set_event_triggered(false);
-      }
-      else if (!network_->CheckProbabilityPT(logger_))
-      {
-
+        }  
       }
 
-      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_) && network_->CheckProbabilityPT(logger_))
+      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false) )
       {
-          Retransmission();
-          network_->set_retransmission_clock(rand() % retransmission_packet_time_max_);
+         Retransmission();
+         network_->set_retransmission_clock(rand() % retransmission_packet_time_max_);
+         network_->set_event_triggered(false);
+         network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max_);
+      }
+      else if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true) )
+      {
+        if (network_->WaitForNextGap(logger_))
+        {
+          network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_pt_);
           network_->set_event_triggered(false);
-          network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max);
-      }
-      else if (!network_->CheckProbabilityPT(logger_))
-      {
-
+        }
       }
     }
 
@@ -150,7 +157,7 @@ void Simulation::StartTransmission()
       if (network_->return_vector_of_transmitters()[i]->return_packet_vector().size() != 0)
       {
         channel_of_network_->GetPacketAndSend(network_->return_vector_of_transmitters()[i]->return_packet_vector()[0],logger_);
-        which_transmitter_is_sending = i;
+        which_transmitter_is_sending_ = i;
 
         break;
       }
@@ -161,8 +168,8 @@ void Simulation::StartTransmission()
 void Simulation::Retransmission()
 {
   logger_->Information("Starting retransmission...");
-  network_->return_vector_of_transmitters()[which_transmitter_is_sending]->RetransmissionPacket(network_->return_vector_of_transmitters()[which_transmitter_is_sending]->return_packet_vector()[0], logger_); // initialize the packet_to_retransmiss
-  channel_of_network_->GetPacketAndSend(network_->return_vector_of_transmitters()[which_transmitter_is_sending]->return_packet_vector()[0], logger_);
+  network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->RetransmissionPacket(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0], logger_); // initialize the packet_to_retransmiss
+  channel_of_network_->GetPacketAndSend(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0], logger_);
   channel_of_network_->set_channel_busy(true);
 }
 
@@ -170,7 +177,7 @@ void Simulation::AckNotification()
 {
   network_->set_transmission_clock(-1);
   network_->set_retransmission_clock(-1);
-  network_->return_vector_of_receivers()[which_transmitter_is_sending]->ReceivePacketACK(network_->return_vector_of_transmitters()[which_transmitter_is_sending]->return_packet_vector()[0], logger_, channel_of_network_->return_colision_status());
+  network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReceivePacketACK(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0], logger_, channel_of_network_->return_colision_status());
 }
 
 void Simulation::EndTransmission()
@@ -179,10 +186,10 @@ void Simulation::EndTransmission()
   network_->set_retransmission_clock(-1);
   network_->set_ack_notification_clock(-1);
 
-  if (network_->return_vector_of_receivers()[which_transmitter_is_sending]->ReturnAckNotification(logger_)) // watch if packet sent correctly
+  if (network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_)) // watch if packet sent correctly
   {
-    network_->return_vector_of_receivers()[which_transmitter_is_sending]->PushBackToVectorPacektsReceived(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
-    network_->return_vector_of_transmitters()[which_transmitter_is_sending]->return_packet_vector().erase(network_->return_vector_of_transmitters()[which_transmitter_is_sending]->return_packet_vector().begin());
+    network_->return_vector_of_receivers()[which_transmitter_is_sending_]->PushBackToVectorPacektsReceived(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
+    network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().erase(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().begin());
 
     channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin()); // delete packet from channel to allow to send next packets
     channel_of_network_->set_channel_busy(false);
@@ -246,10 +253,10 @@ void Simulation::Initialize()
   network_->set_retransmission_clock(-1);
   network_->set_ack_notification_clock(-1);
   network_->set_waiting_if_channel_is_busy(0);
-  network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max);
+  network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max_);
   network_->set_event_triggered(false);
   channel_of_network_->set_status_of_colission(false);
   is_retransmission_ = false;
   waiting_channel_busy_ = false;
-  which_transmitter_is_sending = -1;
+  which_transmitter_is_sending_ = -1;
 }
