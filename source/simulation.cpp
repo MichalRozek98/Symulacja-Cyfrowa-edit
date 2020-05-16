@@ -1,14 +1,17 @@
 #include "simulation.h"
 #include <iostream>
 #include <fstream>
+#include <iterator>
+#include "generator.h"
 
-Simulation::Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger)
+Simulation::Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger, Generator* generator)
 {
   network_ = network;
   channel_of_network_ = channel_of_network;
   supervision_of_simulation_time_ = supervision_of_simulation_time;
   logger_ = logger;
   stop_transmission_when_no_packets_ = false;
+  generator_ = generator;
 }
 
 Simulation::~Simulation()
@@ -92,31 +95,31 @@ void Simulation::Execute()
 
       channel_of_network_->CheckForCollision(logger_);
 
-      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false) )
+      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_) )
       {
          StartTransmission();
          network_->set_transmission_clock(rand() % transmission_packet_time_max_);
          network_->set_event_triggered(false);
       }
-      else if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true) )
+      else if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
       {
-        if (network_->WaitForNextGap(logger_))
+        if (network_->WaitForNextGap(logger_, generator_))
         {
           network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_pt_);
           network_->set_event_triggered(false);
         }  
       }
 
-      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false) )
+      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_) )
       {
          Retransmission();
          network_->set_retransmission_clock(rand() % retransmission_packet_time_max_);
          network_->set_event_triggered(false);
          network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max_);
       }
-      else if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true) )
+      else if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
       {
-        if (network_->WaitForNextGap(logger_))
+        if (network_->WaitForNextGap(logger_, generator_))
         {
           network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_pt_);
           network_->set_event_triggered(false);
@@ -134,6 +137,10 @@ void Simulation::Execute()
   }
 
   EndSimulation();
+
+  std::cout << "\n";
+  logger_->Information("Packets received properly: " + std::to_string(packets_received_.size()));
+
 }
 
 void Simulation::StartSimulation()
@@ -188,7 +195,7 @@ void Simulation::EndTransmission()
 
   if (network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_)) // watch if packet sent correctly
   {
-    network_->return_vector_of_receivers()[which_transmitter_is_sending_]->PushBackToVectorPacektsReceived(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
+    packets_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
     network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().erase(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().begin());
 
     channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin()); // delete packet from channel to allow to send next packets

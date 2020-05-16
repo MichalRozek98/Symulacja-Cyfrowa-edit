@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\source\channel.cpp" />
     <ClCompile Include="..\source\csma_network.cpp" />
+    <ClCompile Include="..\source\generator.cpp" />
     <ClCompile Include="..\source\logger.cpp" />
     <ClCompile Include="..\source\main.cpp" />
     <ClCompile Include="..\source\packet.cpp" />
@@ -32,6 +33,7 @@
   <ItemGroup>
     <ClInclude Include="..\source\channel.h" />
     <ClInclude Include="..\source\csma_network.h" />
+    <ClInclude Include="..\source\generator.h" />
     <ClInclude Include="..\source\logger.h" />
     <ClInclude Include="..\source\packet.h" />
     <ClInclude Include="..\source\receiver.h" />

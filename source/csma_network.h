@@ -5,6 +5,7 @@
 #include "receiver.h"
 #include "transmitter.h"
 #include "packet.h"
+#include "generator.h"
 
 class CsmaNetwork
 {
@@ -42,8 +43,8 @@ public:
   size_t return_waiting_random_time_rctpk() { return waiting_random_time_rctpk_; };
   bool return_stepwise() { return stepwise_; };
 
-  bool CheckProbabilityPT(Logger* logger, bool was_written);
-  bool WaitForNextGap(Logger* logger);
+  bool CheckProbabilityPT(Logger* logger, bool was_written, Generator* generator);
+  bool WaitForNextGap(Logger* logger, Generator* generator);
 
 
 private:
@@ -58,6 +59,7 @@ private:
   size_t ack_notification_clock_ = -1;
   size_t waiting_if_channel_is_busy_ = 0;
   size_t waiting_random_time_rctpk_ = 0;
+  const double pt_probability = 0.8;
   bool stepwise_;
 
 };

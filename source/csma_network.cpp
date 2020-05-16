@@ -1,4 +1,5 @@
 #include "csma_network.h"
+#include "generator.h"
 
 CsmaNetwork::CsmaNetwork()
 {
@@ -24,13 +25,9 @@ void CsmaNetwork::PushBackToVectorOfReceivers(Receiver* receiver)
   receivers_.push_back(receiver);
 }
 
-bool CsmaNetwork::CheckProbabilityPT(Logger* logger, bool was_written)
+bool CsmaNetwork::CheckProbabilityPT(Logger* logger, bool was_written, Generator* generator)
 {
-  srand((int)time(NULL));
-  std::vector<size_t> check = {1, 1, 0, 1, 1};
-  size_t random = rand() % 5;
-
-  if(check[random] == 0)
+  if(generator->RndZeroOne(pt_probability) == 0)
   {
     if(!was_written)
     logger->Error("Couldn't send packet because of PT probability...");
@@ -46,13 +43,9 @@ bool CsmaNetwork::CheckProbabilityPT(Logger* logger, bool was_written)
   }
 }
 
-bool CsmaNetwork::WaitForNextGap(Logger* logger)
+bool CsmaNetwork::WaitForNextGap(Logger* logger, Generator* generator)
 {
-  srand((int)time(NULL));
-  std::vector<size_t> check = { 1, 1, 0, 1, 1 };
-  size_t random = rand() % 5;
-
-  if (check[random] == 0)
+  if (generator->RndZeroOne(1 - pt_probability) == 0)
   {
     logger->Error("Waiting for next gap...");
     return true;

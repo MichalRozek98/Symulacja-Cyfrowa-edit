@@ -8,11 +8,12 @@
 #include "simulation_time.h"
 #include "csma_network.h"
 #include "logger.h"
+#include "generator.h"
 
 class Simulation
 {
 public:
-  Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger);
+  Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger, Generator* generator);
   ~Simulation();
   void Execute();
   void StartSimulation();
@@ -29,6 +30,7 @@ private:
   Channel* channel_of_network_;
   SimulationTime* supervision_of_simulation_time_;
   Logger* logger_;
+  Generator* generator_;
   bool stop_transmission_when_no_packets_;
   double time_to_update_main_clock_;
   size_t generation_packet_time_max_ = 15;
@@ -41,7 +43,7 @@ private:
   size_t which_transmitter_is_sending_ = -1;
   bool is_retransmission_ = false;
   bool waiting_channel_busy_ = false;
-
+  std::vector<Packet*> packets_received_;
 };
 
 #endif // SIMULATION_H_

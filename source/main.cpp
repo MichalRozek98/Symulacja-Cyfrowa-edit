@@ -6,6 +6,7 @@
 #include "channel.h"
 #include "csma_network.h"
 #include "simulation.h"
+#include "generator.h"
 
 
 
@@ -15,6 +16,9 @@ int main(int argc, char* argv[])
   Channel* channel_of_network = new Channel();
   SimulationTime* supervision_of_simulation_time = new SimulationTime(0);// just declare an simulation time but in Simulation.cpp it will be set properly
   Logger* logger = new Logger();
+
+  int seed = 44;
+  Generator* generator = new Generator(seed);
 
   std::cout << "Select simulation mode: \n" << "1 - continuously \n" << "2 - stepwise \n";
   int mode_type = 0;
@@ -67,7 +71,7 @@ int main(int argc, char* argv[])
       break;
   }
 
-  Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger);
+  Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator);
   Simulation_in_progress->Execute();
 
   return 0;

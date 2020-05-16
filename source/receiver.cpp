@@ -31,11 +31,6 @@ bool Receiver::ReturnAckNotification(Logger* logger)
   return  ack_notification_;
 }
 
-void Receiver::PushBackToVectorPacektsReceived(Packet* packet)
-{
-  packets_received_.push_back(packet);
-}
-
 bool Receiver::TerProbabilityOfNotCorrectReceived()
 {
   std::vector<int> probability_of_sent = {1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2};
@@ -58,7 +53,6 @@ bool Receiver::ReceivePacketACK(Packet* receive_packet, Logger* logger, bool col
   {
     logger->Information("Packet with id: " + std::to_string(receive_packet->return_packet_id()) + " was correctly received from Transmitter: " + std::to_string(this->ReturnIdReceiver()) + "...");
     receive_packet->set_correct_send(true); // change the flag of properly sending packet
-    packets_received_.push_back(receive_packet); // push the vector to vector of received packets
     this->ack_notification_ = true;
   }
   else if(colission)
