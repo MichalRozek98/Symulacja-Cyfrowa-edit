@@ -1,8 +1,9 @@
 #include "logger.h"
+#include <string>
 
-Logger::Logger()
+Logger::Logger(std::string path)
 {
-  path_logs_.open("SimulationLogs.txt");
+  path_logs_.open(path);
 }
 
 Logger::~Logger()

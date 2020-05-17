@@ -24,6 +24,7 @@ public:
   void EndTransmission();
   void UpdateClock();
   void Initialize();
+  void SaveStatistics();
 
 private:
   CsmaNetwork* network_;
@@ -38,7 +39,7 @@ private:
   size_t retransmission_packet_time_max_ = 27;
   size_t waiting_time_when_channel_is_busy_ = 5;
   size_t waiting_time_when_channel_is_busy_pt_ = 10;
-  size_t waiting_random_rctpk_time_max_ = 17;
+  size_t waiting_random_rctpk_time_max_ = 10;
   size_t ack_notification_send_time_max_ = 9;
   size_t which_transmitter_is_sending_ = -1;
   bool is_retransmission_ = false;

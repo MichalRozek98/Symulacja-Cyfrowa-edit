@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
   CsmaNetwork* network = new CsmaNetwork();
   Channel* channel_of_network = new Channel();
   SimulationTime* supervision_of_simulation_time = new SimulationTime(0);// just declare an simulation time but in Simulation.cpp it will be set properly
-  Logger* logger = new Logger();
+  Logger* logger = new Logger("SimulationLogs.txt");
 
   int seed_ter = 99;
   Generator* generator_ter_pt = new Generator(seed_ter);
@@ -58,44 +58,45 @@ int main(int argc, char* argv[])
     }
   }
 
-  for (int i = 0; i < network->return_kreceiver_transmitter_count(); ++i) // creating transmitters and receivers with correct ids
-  {
-    auto seed_to_write_uniform = seed_vector.back();
-    seed_vector.pop_back();
-    auto seed_to_write_exp = seed_vector.back();
-    seed_vector.pop_back();
 
-    Transmitter* transmitter_one = new Transmitter(network->return_vector_of_transmitters().size(), seed_to_write_uniform, seed_to_write_exp);
-    Receiver* receiver_one = new Receiver(network->return_vector_of_receivers().size());
-    network->PushBackToVectorOfTransmitters(transmitter_one);
-    network->PushBackToVectorOfReceivers(receiver_one);
-  }
+    for (int i = 0; i < network->return_kreceiver_transmitter_count(); ++i) // creating transmitters and receivers with correct ids
+    {
+      auto seed_to_write_uniform = seed_vector.back();
+      seed_vector.pop_back();
+      auto seed_to_write_exp = seed_vector.back();
+      seed_vector.pop_back();
 
-  std::cout << "Select log type: \n" << "1 - Only INFO\n" << "2 - Only ERROR\n" << "3 - INFO and ERROR" << std::endl;
-  int log_type = 0;
+      Transmitter* transmitter_one = new Transmitter(network->return_vector_of_transmitters().size(), seed_to_write_uniform, seed_to_write_exp);
+      Receiver* receiver_one = new Receiver(network->return_vector_of_receivers().size());
+      network->PushBackToVectorOfTransmitters(transmitter_one);
+      network->PushBackToVectorOfReceivers(receiver_one);
+    }
 
-  while (log_type < 1 || log_type > 3)
-  {
-    std::cout << "Write number (1-3): ";
-    std::cin >> log_type;
-    std::cout << std::endl;
-  }
+    std::cout << "Select log type: \n" << "1 - Only INFO\n" << "2 - Only ERROR\n" << "3 - INFO and ERROR" << std::endl;
+    int log_type = 0;
 
-  switch (log_type)
-  {
-  case 1:
-    logger->SetLogsType(Logger::InformationInConsole::Info);
+    while (log_type < 1 || log_type > 3)
+    {
+      std::cout << "Write number (1-3): ";
+      std::cin >> log_type;
+      std::cout << std::endl;
+    }
+
+    switch (log_type)
+    {
+    case 1:
+      logger->SetLogsType(Logger::InformationInConsole::Info);
       break;
-  case 2:
-    logger->SetLogsType(Logger::InformationInConsole::Error);
+    case 2:
+      logger->SetLogsType(Logger::InformationInConsole::Error);
       break;
-  case 3:
-    logger->SetLogsType(Logger::InformationInConsole::InfoAndError);
+    case 3:
+      logger->SetLogsType(Logger::InformationInConsole::InfoAndError);
       break;
-  }
+    }
 
-  Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator_ter_pt);
-  Simulation_in_progress->Execute();
+    Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator_ter_pt);
+    Simulation_in_progress->Execute();
 
   return 0;
 }

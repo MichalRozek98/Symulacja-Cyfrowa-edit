@@ -3,13 +3,14 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <string>
 
 class Logger
 {
 public:
   enum class InformationInConsole {Info, Error, InfoAndError};
 
-  Logger();
+  Logger(std::string path);
   ~Logger();
 
   void SetLogsType(InformationInConsole logs_type);

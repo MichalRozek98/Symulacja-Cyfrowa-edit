@@ -101,7 +101,10 @@ void Simulation::Execute()
       if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_) )
       {
          StartTransmission();
-         average_waiting_packet_exit_from_bufor_ += supervision_of_simulation_time_->return_time_now() - network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0]->return_time_existing();
+
+         if(supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
+            average_waiting_packet_exit_from_bufor_ += supervision_of_simulation_time_->return_time_now() - network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0]->return_time_existing();
+
          network_->set_transmission_clock(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, transmission_packet_time_max_));
          network_->set_event_triggered(false);
       }
@@ -119,7 +122,7 @@ void Simulation::Execute()
          Retransmission();
          network_->set_retransmission_clock(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, retransmission_packet_time_max_));
          network_->set_event_triggered(false);
-         network_->set_waiting_random_time_rctpk(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, waiting_random_rctpk_time_max_));
+         network_->set_waiting_random_time_rctpk(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, waiting_random_rctpk_time_max_) * network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0]->return_current_number_of_retransmission())); // CTPk * R
       }
       else if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
       {
@@ -142,50 +145,7 @@ void Simulation::Execute()
 
   EndSimulation();
 
-  std::cout << "\n";
-  std::vector<double> ber_vector;
-  double ber_rate = 0;
-  double ber_rate_average = 0;
-  double ber_rate_max = 0;
-
-  for (int i = 0; i < network_->return_kreceiver_transmitter_count(); ++i)
-  {
-    logger_->Information("Statistic for TX & RX number " + std::to_string(i));
-    logger_->Information("Packets received properly: " + std::to_string(network_->return_vector_of_receivers()[i]->return_packets_received().size()));
-    logger_->Information("Packets received incorrectly: " + std::to_string(network_->return_vector_of_receivers()[i]->return_packets_not_received().size()));
-    if (network_->return_vector_of_receivers()[i]->return_packets_received().size() != 0)
-    {
-      ber_rate = network_->return_vector_of_receivers()[i]->return_packets_not_received().size() / network_->return_vector_of_receivers()[i]->return_packets_received().size();
-      ber_vector.push_back(ber_rate);
-    }
-    logger_->Information("BER: " + std::to_string(ber_rate));
-    std::cout << "\n";
-  }
-
-  for (int i = 0; i < ber_vector.size(); ++i)
-  {
-    ber_rate_average += ber_vector[i];
-
-    if (ber_vector[i] > ber_rate_max)
-    {
-      ber_rate_max = ber_vector[i];
-    }
-  }
-
-
-  ber_rate_average /= ber_vector.size();
-
-  logger_->Information("GENERAL STATISTICS");
-  std::cout << "\n";
-
-  logger_->Information("Packets received properly: " + std::to_string(packets_received_.size()));
-  logger_->Information("Packets received incorrectly: " + std::to_string(packets_not_received_.size()));
-  logger_->Information("BER: " + std::to_string(ber_rate_average));
-  logger_->Information("Max BER: " + std::to_string(ber_rate_max));
-  logger_->Information("Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()));
-  logger_->Information("Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size())/1000) + " ms");
-  logger_->Information("Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms");
-  logger_->Information("Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s");
+  SaveStatistics();
 }
 
 void Simulation::StartSimulation()
@@ -204,7 +164,7 @@ void Simulation::StartSimulation()
  std::cout << std::endl;
  std::cout << "Write the time of the initial phase [ms]: ";
  std::cin >> initial_phase_time_;
- initial_phase_time_ = 10;
+ initial_phase_time_ *= 10;
 
  logger_->Information("Starting simulation using the method M1...");
 }
@@ -283,9 +243,13 @@ void Simulation::EndTransmission()
 
   if (network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_)) // watch if packet sent correctly
   {
-    packets_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
-    retransmission_count_ += channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission(); // update retransmission count
-    average_delay_packet_ += supervision_of_simulation_time_->return_time_now() - channel_of_network_->ReturnPacketInProgress()[0]->return_time_existing(); // push time of existing packet after generate to correctly received
+    if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
+    {
+      packets_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
+      retransmission_count_ += channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission(); // update retransmission count
+      average_delay_packet_ += supervision_of_simulation_time_->return_time_now() - channel_of_network_->ReturnPacketInProgress()[0]->return_time_existing(); // push time of existing packet after generate to correctly received
+    }
+
     network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().erase(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().begin());
     channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin()); // delete packet from channel to allow to send next packets
     channel_of_network_->set_channel_busy(false);
@@ -312,8 +276,12 @@ void Simulation::EndTransmission()
     }
     else
     {
-      network_->return_vector_of_receivers()[which_transmitter_is_sending_]->PushBackPacketsNotReceived(channel_of_network_->ReturnPacketInProgress()[0]);
-      packets_not_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]);
+      if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
+      {
+        network_->return_vector_of_receivers()[which_transmitter_is_sending_]->PushBackPacketsNotReceived(channel_of_network_->ReturnPacketInProgress()[0]);
+        packets_not_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]);
+      }
+
       channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin()); // delete packet from channel to allow to send next packets
       channel_of_network_->set_channel_busy(false);
       is_retransmission_ = false;
@@ -377,6 +345,58 @@ void Simulation::Initialize()
   waiting_channel_busy_ = false;
   which_transmitter_is_sending_ = -1;
   retransmission_count_ = 0;
+  average_delay_packet_ = 0;
+  average_waiting_packet_exit_from_bufor_ = 0;
+}
+
+void Simulation::SaveStatistics()
+{
+  logger_ = new Logger("Statistics.txt");
+
+  std::cout << "\n";
+  std::vector<double> ber_vector;
+  double ber_rate = 0;
+  double ber_rate_average = 0;
+  double ber_rate_max = 0;
+
+  for (int i = 0; i < network_->return_kreceiver_transmitter_count(); ++i)
+  {
+    logger_->Information("Statistic for TX & RX number " + std::to_string(i));
+    logger_->Information("Packets received properly: " + std::to_string(network_->return_vector_of_receivers()[i]->return_packets_received().size()));
+    logger_->Information("Packets received incorrectly: " + std::to_string(network_->return_vector_of_receivers()[i]->return_packets_not_received().size()));
+    if (network_->return_vector_of_receivers()[i]->return_packets_received().size() != 0)
+    {
+      ber_rate = network_->return_vector_of_receivers()[i]->return_packets_not_received().size() / network_->return_vector_of_receivers()[i]->return_packets_received().size();
+      ber_vector.push_back(ber_rate);
+    }
+    logger_->Information("BER: " + std::to_string(ber_rate));
+    std::cout << "\n";
+  }
+
+  for (int i = 0; i < ber_vector.size(); ++i)
+  {
+    ber_rate_average += ber_vector[i];
+
+    if (ber_vector[i] > ber_rate_max)
+    {
+      ber_rate_max = ber_vector[i];
+    }
+  }
+
+
+  ber_rate_average /= ber_vector.size();
+
+  logger_->Information("GENERAL STATISTICS");
+  std::cout << "\n";
+
+  logger_->Information("Packets received properly: " + std::to_string(packets_received_.size()));
+  logger_->Information("Packets received incorrectly: " + std::to_string(packets_not_received_.size()));
+  logger_->Information("BER: " + std::to_string(ber_rate_average));
+  logger_->Information("Max BER: " + std::to_string(ber_rate_max));
+  logger_->Information("Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()));
+  logger_->Information("Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms");
+  logger_->Information("Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms");
+  logger_->Information("Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s");
 }
 
 
