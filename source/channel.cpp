@@ -24,7 +24,7 @@ void Channel::CheckForCollision(Logger* logger)
     logger->Error("A collision was encountered in the channel...");
     collision_ = true;
   }
-  else if (packets_in_progress_.size() == 1)
+  else if (packets_in_progress_.size() == 0 || packets_in_progress_.size() == 1)
   {
     collision_ = false;
   }

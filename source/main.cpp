@@ -7,6 +7,7 @@
 #include "csma_network.h"
 #include "simulation.h"
 #include "generator.h"
+#include <fstream>
 
 
 
@@ -17,8 +18,8 @@ int main(int argc, char* argv[])
   SimulationTime* supervision_of_simulation_time = new SimulationTime(0);// just declare an simulation time but in Simulation.cpp it will be set properly
   Logger* logger = new Logger();
 
-  int seed = 44;
-  Generator* generator = new Generator(seed);
+  int seed_ter = 99;
+  Generator* generator_ter_pt = new Generator(seed_ter);
 
   std::cout << "Select simulation mode: \n" << "1 - continuously \n" << "2 - stepwise \n";
   int mode_type = 0;
@@ -40,9 +41,31 @@ int main(int argc, char* argv[])
     break;
   }
 
+  int seed = 125;
+  Generator* generator = new Generator(seed);
+  std::vector<int> seed_vector;
+
+  int number_of_rands = 100000;
+
+  for (int i = 0; i < number_of_rands * 160; ++i)
+  {
+    auto rand_number = generator->Rnd();
+
+    if (i % 100000 == 0)
+    {
+      auto seed_to_save = generator->return_kernel();
+      seed_vector.push_back(seed_to_save);
+    }
+  }
+
   for (int i = 0; i < network->return_kreceiver_transmitter_count(); ++i) // creating transmitters and receivers with correct ids
   {
-    Transmitter* transmitter_one = new Transmitter(network->return_vector_of_transmitters().size());
+    auto seed_to_write_uniform = seed_vector.back();
+    seed_vector.pop_back();
+    auto seed_to_write_exp = seed_vector.back();
+    seed_vector.pop_back();
+
+    Transmitter* transmitter_one = new Transmitter(network->return_vector_of_transmitters().size(), seed_to_write_uniform, seed_to_write_exp);
     Receiver* receiver_one = new Receiver(network->return_vector_of_receivers().size());
     network->PushBackToVectorOfTransmitters(transmitter_one);
     network->PushBackToVectorOfReceivers(receiver_one);
@@ -71,7 +94,7 @@ int main(int argc, char* argv[])
       break;
   }
 
-  Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator);
+  Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator_ter_pt);
   Simulation_in_progress->Execute();
 
   return 0;

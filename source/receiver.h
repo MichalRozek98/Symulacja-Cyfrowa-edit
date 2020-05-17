@@ -5,6 +5,7 @@
 #include "packet.h"
 #include "logger.h"
 #include "channel.h"
+#include "generator.h"
 
 class Receiver
 {
@@ -18,13 +19,21 @@ public:
   bool ReturnAckNotification(Logger* logger); // method which will return flag with logs
   bool return_ack_flag() { return ack_notification_; }; // method which will return just flag without logs
 
-  bool TerProbabilityOfNotCorrectReceived();
+  bool TerProbabilityOfNotCorrectReceived(Generator* generator);
 
-  bool ReceivePacketACK(Packet* receive_packet, Logger* logger, bool collision); // returns the ACK confirmation of sucesfully received packet
+  bool ReceivePacketACK(Packet* receive_packet, Logger* logger, bool collision, Generator* generator); // returns the ACK confirmation of sucesfully received packet
+
+  std::vector<Packet*>& return_packets_received() { return packets_received_; };
+
+  std::vector<Packet*>& return_packets_not_received() { return packets_not_received_; };
+  void PushBackPacketsNotReceived(Packet* packet);
 
 private:
   unsigned int id_receiver_; // identicificator number of receiver which will be equal with transmitter's id
   bool ack_notification_; // send ACK notification about sent packet properly
+  std::vector<Packet*> packets_received_;
+  std::vector<Packet*> packets_not_received_;
+  size_t ter_probability_ = 0.2;
 
 };
 #endif //REVEIVER_H_

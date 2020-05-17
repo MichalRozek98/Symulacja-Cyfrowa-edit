@@ -33,7 +33,7 @@ private:
   Generator* generator_;
   bool stop_transmission_when_no_packets_;
   double time_to_update_main_clock_;
-  size_t generation_packet_time_max_ = 15;
+  size_t generation_packet_time_max_ = 40;
   size_t transmission_packet_time_max_ = 28;
   size_t retransmission_packet_time_max_ = 27;
   size_t waiting_time_when_channel_is_busy_ = 5;
@@ -44,6 +44,12 @@ private:
   bool is_retransmission_ = false;
   bool waiting_channel_busy_ = false;
   std::vector<Packet*> packets_received_;
+  std::vector<Packet*> packets_not_received_;
+  double lambda_ = 0.01;
+  size_t initial_phase_time_;
+  size_t retransmission_count_ = 0;
+  size_t average_delay_packet_ = 0;
+  size_t average_waiting_packet_exit_from_bufor_ = 0;
 };
 
 #endif // SIMULATION_H_

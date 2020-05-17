@@ -1,18 +1,22 @@
 #include "transmitter.h"
 #include <iostream>
+#include "generator.h"
 
-Transmitter::Transmitter(size_t id)
+Transmitter::Transmitter(size_t id, int seed_uniform, int seed_exp)
 {
   id_transmitter_ = id;
+  uniform_generator_ = new Generator(seed_uniform);
+  exp_generator_ = new Generator(seed_exp);
 }
 
 Transmitter::~Transmitter()
 {
 }
 
-void Transmitter::GeneratePacket(size_t packet_size, Logger* logger)
+void Transmitter::GeneratePacket(size_t packet_size, Logger* logger, size_t actual_clock)
 {
   Packet* packet = new Packet();
+  packet->set_time_existing(actual_clock);
   packet->set_packet_size(packet_size); // initialization of packet size
   //packet->SetTimeCgpk(rand() % 1001); // generate a dealy of packet creating from 0 to 1000 ms
   packet->set_packet_id(packets_to_send_.size());

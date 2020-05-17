@@ -1,5 +1,6 @@
 
 #include "receiver.h"
+#include "generator.h"
 
 Receiver::Receiver(unsigned id)
 {
@@ -31,13 +32,9 @@ bool Receiver::ReturnAckNotification(Logger* logger)
   return  ack_notification_;
 }
 
-bool Receiver::TerProbabilityOfNotCorrectReceived()
+bool Receiver::TerProbabilityOfNotCorrectReceived(Generator* generator)
 {
-  std::vector<int> probability_of_sent = {1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2};
-
-  int ter_error = rand() % 10;
-
-  if(probability_of_sent[ter_error] == 1)
+  if(generator->RndZeroOne(ter_probability_) == 0)
   {
     return false;
   }
@@ -47,15 +44,16 @@ bool Receiver::TerProbabilityOfNotCorrectReceived()
   }
 }
 
-bool Receiver::ReceivePacketACK(Packet* receive_packet, Logger* logger, bool colission)
+bool Receiver::ReceivePacketACK(Packet* receive_packet, Logger* logger, bool colission, Generator* generator)
 {
-  if (!this->TerProbabilityOfNotCorrectReceived() && !colission)
+  if (!this->TerProbabilityOfNotCorrectReceived(generator) && !colission)
   {
     logger->Information("Packet with id: " + std::to_string(receive_packet->return_packet_id()) + " was correctly received from Transmitter: " + std::to_string(this->ReturnIdReceiver()) + "...");
     receive_packet->set_correct_send(true); // change the flag of properly sending packet
+    packets_received_.push_back(receive_packet);
     this->ack_notification_ = true;
   }
-  else if(colission)
+  else if(colission && !this->TerProbabilityOfNotCorrectReceived(generator))
   {
     logger->Error("Packet with id: " + std::to_string(receive_packet->return_packet_id()) + " wasn't correctly received from Transmitter: " + std::to_string(this->ReturnIdReceiver()) + " because of Colission...");
     this->ack_notification_ = false;
@@ -67,4 +65,9 @@ bool Receiver::ReceivePacketACK(Packet* receive_packet, Logger* logger, bool col
   }
 
   return this->ack_notification_;
+}
+
+void Receiver::PushBackPacketsNotReceived(Packet* packet)
+{
+  packets_not_received_.push_back(packet);
 }

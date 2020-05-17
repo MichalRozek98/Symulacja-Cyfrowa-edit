@@ -23,6 +23,9 @@ public:
 
   void set_correct_send(bool flag) { correct_send_ = flag; };
   bool return_correct_send() { return correct_send_; };
+
+  void set_time_existing(size_t time) { packet_time_existing_ = time; };
+  size_t return_time_existing() { return packet_time_existing_; };
   
 private:
   size_t current_number_of_retransmission_; // current number of retransmission of this packet
@@ -30,6 +33,7 @@ private:
   size_t packet_size_; // packet size
   size_t packet_id_; // packet id
   size_t packet_receiver_transmitter_id_; // need to compare IDs of receiver, transmitter and packet
+  size_t packet_time_existing_;
   bool correct_send_; // watch if the packet was correctly sent 
 };
 #endif // PACKET_H_

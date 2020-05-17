@@ -45,13 +45,11 @@ bool CsmaNetwork::CheckProbabilityPT(Logger* logger, bool was_written, Generator
 
 bool CsmaNetwork::WaitForNextGap(Logger* logger, Generator* generator)
 {
-  if (generator->RndZeroOne(1 - pt_probability) == 0)
+  if (generator->RndZeroOne(1 - pt_probability) == 1)
   {
-    logger->Error("Waiting for next gap...");
+    logger->Information("Waiting for next gap...");
     return true;
   }
   else
-  {
     return false;
-  }
 }
