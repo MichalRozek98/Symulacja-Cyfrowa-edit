@@ -33,13 +33,7 @@ Packet* Transmitter::SendPacket(Packet* current_packet_to_send, Logger* logger)
 
 Packet* Transmitter::RetransmissionPacket(Packet* packet_retransmission, Logger* logger)
 {
-  if (packet_retransmission->return_current_number_of_retransmission() >= 15)
-  {
-    logger->Error("Couldn't send packet, number of retransmission has exceeded 15...");
-    packet_retransmission->set_correct_send(false);
-    // failed to send packet, I will delete the packet with flag correct send set false
-  }
-  else
+  if(packet_retransmission->return_current_number_of_retransmission() < 15)
   {
     logger->Information("Trying to retransmit packet with id: " + std::to_string(packet_retransmission->return_packet_id()) + " from Transmitter: " + std::to_string(this->id_transmitter_) + "...");
     packet_retransmission->set_current_number_of_retransmission(packet_retransmission->return_current_number_of_retransmission() + 1); // increment of retransmission packet

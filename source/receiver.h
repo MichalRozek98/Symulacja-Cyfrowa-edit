@@ -16,7 +16,7 @@ public:
   void SetIdReceiver(unsigned int id);
   int ReturnIdReceiver();
 
-  bool ReturnAckNotification(Logger* logger); // method which will return flag with logs
+  bool ReturnAckNotification(Logger* logger, bool write); // method which will return flag with logs
   bool return_ack_flag() { return ack_notification_; }; // method which will return just flag without logs
 
   bool TerProbabilityOfNotCorrectReceived(Generator* generator, double ter);

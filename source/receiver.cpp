@@ -22,12 +22,15 @@ int Receiver::ReturnIdReceiver()
   return  id_receiver_;
 }
 
-bool Receiver::ReturnAckNotification(Logger* logger)
+bool Receiver::ReturnAckNotification(Logger* logger, bool write)
 {
-  if (ack_notification_)
-    logger->Information("(ACK Notification) The packet was received correctly...");
-  else
-    logger->Error("(ACK Notification) The packet wasn't received correctly...");
+  if (write)
+  {
+    if (ack_notification_)
+      logger->Information("(ACK Notification) The packet was received correctly...");
+    else
+      logger->Error("(ACK Notification) The packet wasn't received correctly...");
+  }
 
   return  ack_notification_;
 }

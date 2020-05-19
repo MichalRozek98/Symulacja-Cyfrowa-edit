@@ -52,6 +52,7 @@ private:
   size_t retransmission_count_ = 0;
   size_t average_delay_packet_ = 0;
   size_t average_waiting_packet_exit_from_bufor_ = 0;
+  bool end_transmission_flag_ = false;
 };
 
 #endif // SIMULATION_H_

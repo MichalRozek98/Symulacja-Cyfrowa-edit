@@ -88,15 +88,19 @@ void Simulation::Execute()
         }
       }
 
+      if (network_->return_waiting_if_channel_is_busy() != 0)
+      {
+        waiting_channel_busy_ = true;
+      }
+
       if (network_->return_waiting_if_channel_is_busy() == 0)
       {
         waiting_channel_busy_ = false;
         network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_);
       }
-      else
-      {
-        waiting_channel_busy_ = true;
-      }
+
+      
+
 
       if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_) )
       {
@@ -108,7 +112,8 @@ void Simulation::Execute()
          network_->set_transmission_clock(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, transmission_packet_time_max_));
          network_->set_event_triggered(false);
       }
-      else if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
+
+      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
       {
         if (network_->WaitForNextGap(logger_, generator_))
         {
@@ -124,12 +129,63 @@ void Simulation::Execute()
          network_->set_event_triggered(false);
          network_->set_waiting_random_time_rctpk(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, waiting_random_rctpk_time_max_) * network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0]->return_current_number_of_retransmission())); // CTPk * R
       }
-      else if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
+
+      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
       {
         if (network_->WaitForNextGap(logger_, generator_))
         {
           network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_pt_);
           network_->set_event_triggered(false);
+        }
+      }
+
+      if (end_transmission_flag_ && network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_, true)) // watch if packet sent correctly
+      {
+        if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
+        {
+          packets_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
+          retransmission_count_ += channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission(); // update retransmission count
+          average_delay_packet_ += supervision_of_simulation_time_->return_time_now() - channel_of_network_->ReturnPacketInProgress()[0]->return_time_existing(); // push time of existing packet after generate to correctly received
+        }
+
+        network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().erase(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().begin());
+        channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin()); // delete packet from channel to allow to send next packets
+        channel_of_network_->set_channel_busy(false);
+        is_retransmission_ = false;
+        logger_->Information("The transmission has ended..."); // when transmission has ended write this in logs
+        end_transmission_flag_ = false;
+      }
+
+      if (end_transmission_flag_ && !network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_, false)) // if ACK is false try to retransmiss packet
+      {
+        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() < 15)
+        {
+          channel_of_network_->set_channel_busy(false);
+          is_retransmission_ = true;
+        }
+
+        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() >= 15)
+        {
+          if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
+          {
+            network_->return_vector_of_receivers()[which_transmitter_is_sending_]->PushBackPacketsNotReceived(channel_of_network_->ReturnPacketInProgress()[0]);
+            packets_not_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]);
+          }
+
+          network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0]->set_correct_send(false);
+          network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().erase(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().begin());
+          channel_of_network_->set_channel_busy(false);
+          is_retransmission_ = false;
+          logger_->Error("Couldn't send packet, number of retransmission has exceeded 15...");
+          logger_->Information("The transmission has ended..."); // when transmission has ended write this in logs
+        }
+
+        end_transmission_flag_ = false;
+
+        int collision_packets = channel_of_network_->ReturnPacketInProgress().size();
+        for (int i = 0; i < collision_packets; ++i)
+        {
+          channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin());
         }
       }
     }
@@ -274,47 +330,7 @@ void Simulation::EndTransmission()
   network_->set_retransmission_clock(-1);
   network_->set_ack_notification_clock(-1);
 
-  if (network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_)) // watch if packet sent correctly
-  {
-    if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
-    {
-      packets_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]); // push to vector of sent packets
-      retransmission_count_ += channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission(); // update retransmission count
-      average_delay_packet_ += supervision_of_simulation_time_->return_time_now() - channel_of_network_->ReturnPacketInProgress()[0]->return_time_existing(); // push time of existing packet after generate to correctly received
-    }
-
-    network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().erase(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector().begin());
-    channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin()); // delete packet from channel to allow to send next packets
-    channel_of_network_->set_channel_busy(false);
-    is_retransmission_ = false;
-    logger_->Information("The transmission has ended..."); // when transmission has ended write this in logs
-  }
-  else // if ACK is false try to retransmiss packet
-  {
-    if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() < 15)
-    {
-      channel_of_network_->set_channel_busy(false);
-      is_retransmission_ = true;
-    }
-    else
-    {
-      if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
-      {
-        network_->return_vector_of_receivers()[which_transmitter_is_sending_]->PushBackPacketsNotReceived(channel_of_network_->ReturnPacketInProgress()[0]);
-        packets_not_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]);
-      }
-
-      channel_of_network_->set_channel_busy(false);
-      is_retransmission_ = false;
-      logger_->Information("The transmission has ended..."); // when transmission has ended write this in logs
-    }
-
-    int collision_packets = channel_of_network_->ReturnPacketInProgress().size();
-    for (int i = 0; i < collision_packets; ++i)
-    {
-      channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin());
-    }
-  }
+  end_transmission_flag_ = true;
 }
 
 void Simulation::UpdateClock()
@@ -374,6 +390,7 @@ void Simulation::Initialize()
   retransmission_count_ = 0;
   average_delay_packet_ = 0;
   average_waiting_packet_exit_from_bufor_ = 0;
+  end_transmission_flag_ = false;
 }
 
 void Simulation::SaveStatistics()
