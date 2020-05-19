@@ -99,9 +99,6 @@ void Simulation::Execute()
         network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_);
       }
 
-      
-
-
       if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_) )
       {
          StartTransmission();
@@ -272,9 +269,9 @@ void Simulation::StartTransmission()
       
       do
       {
-        while (which_transmitter_is_sending_ == i)
+        if(which_transmitter_is_sending_ == i)
         {
-          i = generator_->RandMinMax(0, network_->return_kreceiver_transmitter_count());
+          i = generator_->RandMinMax(0, network_->return_kreceiver_transmitter_count() - i);
         }
 
         if (network_->return_vector_of_transmitters()[i]->return_packet_vector().size() != 0)
