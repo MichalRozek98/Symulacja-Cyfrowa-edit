@@ -150,6 +150,39 @@ void Simulation::Execute()
 
 void Simulation::StartSimulation()
 {
+  int choose_settings = 0;
+  std::cout << "Choose settings" << std::endl;
+  std::cout << "1 - Default values of input parameters" << std::endl;
+  std::cout << "2 - Declare the input parameters" << std::endl;
+  
+  while (choose_settings < 1 || choose_settings > 2)
+  {
+    std::cin >> choose_settings;
+  }
+
+  if (choose_settings == 2)
+  {
+    lambda_ = -1;
+    ter_probability_ = -1;
+
+    std::cout << "Please enter the lambda value (0-0.1): ";
+    while (lambda_ < 0 || lambda_ > 0.1)
+    {
+      std::cin >> lambda_;
+    }
+    std::cout << std::endl;
+    std::cout << "Please enter the TER value (0-1): ";
+    while (ter_probability_ < 0 || ter_probability_ > 1)
+    {
+      std::cin >> ter_probability_;
+    }
+    std::cout << std::endl;
+  }
+
+  logger_->Information("Set input parameters: ");
+  logger_->Information("Lambda: " + std::to_string(lambda_));
+  logger_->Information("TER: " + std::to_string(ter_probability_));
+
  for (int i = 0; i < network_->return_kreceiver_transmitter_count(); ++i)
  {
    network_->return_vector_of_transmitters()[i]->set_clock(network_->return_vector_of_transmitters()[i]->return_uniform_generator()->RndExp(lambda_));
@@ -232,7 +265,7 @@ void Simulation::AckNotification()
 {
   network_->set_transmission_clock(-1);
   network_->set_retransmission_clock(-1);
-  network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReceivePacketACK(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0], logger_, channel_of_network_->return_colision_status(), generator_);
+  network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReceivePacketACK(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0], logger_, channel_of_network_->return_colision_status(), generator_, ter_probability_);
 }
 
 void Simulation::EndTransmission()
@@ -260,17 +293,6 @@ void Simulation::EndTransmission()
   {
     if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() < 15)
     {
-      if (channel_of_network_->return_colision_status())
-      {
-        int collision_packets = channel_of_network_->ReturnPacketInProgress().size();
-        for (int i = 0; i < collision_packets; ++i)
-        {
-          channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin());
-        }
-      }
-      else
-        channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin());
-
       channel_of_network_->set_channel_busy(false);
       is_retransmission_ = true;
     }
@@ -282,10 +304,15 @@ void Simulation::EndTransmission()
         packets_not_received_.push_back(channel_of_network_->ReturnPacketInProgress()[0]);
       }
 
-      channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin()); // delete packet from channel to allow to send next packets
       channel_of_network_->set_channel_busy(false);
       is_retransmission_ = false;
       logger_->Information("The transmission has ended..."); // when transmission has ended write this in logs
+    }
+
+    int collision_packets = channel_of_network_->ReturnPacketInProgress().size();
+    for (int i = 0; i < collision_packets; ++i)
+    {
+      channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin());
     }
   }
 }
@@ -366,7 +393,7 @@ void Simulation::SaveStatistics()
     logger_->Information("Packets received incorrectly: " + std::to_string(network_->return_vector_of_receivers()[i]->return_packets_not_received().size()));
     if (network_->return_vector_of_receivers()[i]->return_packets_received().size() != 0)
     {
-      ber_rate = network_->return_vector_of_receivers()[i]->return_packets_not_received().size() / network_->return_vector_of_receivers()[i]->return_packets_received().size();
+      ber_rate = (double)network_->return_vector_of_receivers()[i]->return_packets_not_received().size() / (double)network_->return_vector_of_receivers()[i]->return_packets_received().size();
       ber_vector.push_back(ber_rate);
     }
     logger_->Information("BER: " + std::to_string(ber_rate));

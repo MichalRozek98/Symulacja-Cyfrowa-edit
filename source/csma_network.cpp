@@ -27,7 +27,7 @@ void CsmaNetwork::PushBackToVectorOfReceivers(Receiver* receiver)
 
 bool CsmaNetwork::CheckProbabilityPT(Logger* logger, bool was_written, Generator* generator)
 {
-  if(generator->RndZeroOne(pt_probability) == 0)
+  if(generator->RndZeroOne(pt_probability_) == 0)
   {
     if(!was_written)
     logger->Error("Couldn't send packet because of PT probability...");
@@ -45,7 +45,7 @@ bool CsmaNetwork::CheckProbabilityPT(Logger* logger, bool was_written, Generator
 
 bool CsmaNetwork::WaitForNextGap(Logger* logger, Generator* generator)
 {
-  if (generator->RndZeroOne(1 - pt_probability) == 1)
+  if (generator->RndZeroOne(1 - pt_probability_) == 1)
   {
     logger->Information("Waiting for next gap...");
     return true;

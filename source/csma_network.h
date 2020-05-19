@@ -59,7 +59,7 @@ private:
   size_t ack_notification_clock_ = -1;
   size_t waiting_if_channel_is_busy_ = 0;
   size_t waiting_random_time_rctpk_ = 0;
-  const double pt_probability = 0.8;
+  const double pt_probability_ = 0.8;
   bool stepwise_;
 
 };

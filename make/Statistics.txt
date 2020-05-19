@@ -1,41 +1,41 @@
 [INFO]: Statistic for TX & RX number 0
-[INFO]: Packets received properly: 117
+[INFO]: Packets received properly: 15
 [INFO]: Packets received incorrectly: 0
 [INFO]: BER: 0.000000
 [INFO]: Statistic for TX & RX number 1
-[INFO]: Packets received properly: 116
+[INFO]: Packets received properly: 14
 [INFO]: Packets received incorrectly: 0
 [INFO]: BER: 0.000000
 [INFO]: Statistic for TX & RX number 2
-[INFO]: Packets received properly: 113
+[INFO]: Packets received properly: 11
 [INFO]: Packets received incorrectly: 0
 [INFO]: BER: 0.000000
 [INFO]: Statistic for TX & RX number 3
-[INFO]: Packets received properly: 118
-[INFO]: Packets received incorrectly: 0
-[INFO]: BER: 0.000000
+[INFO]: Packets received properly: 12
+[INFO]: Packets received incorrectly: 3
+[INFO]: BER: 0.250000
 [INFO]: Statistic for TX & RX number 4
-[INFO]: Packets received properly: 116
+[INFO]: Packets received properly: 7
 [INFO]: Packets received incorrectly: 0
 [INFO]: BER: 0.000000
 [INFO]: Statistic for TX & RX number 5
-[INFO]: Packets received properly: 126
-[INFO]: Packets received incorrectly: 0
-[INFO]: BER: 0.000000
+[INFO]: Packets received properly: 4
+[INFO]: Packets received incorrectly: 4
+[INFO]: BER: 1.000000
 [INFO]: Statistic for TX & RX number 6
-[INFO]: Packets received properly: 122
+[INFO]: Packets received properly: 13
 [INFO]: Packets received incorrectly: 0
 [INFO]: BER: 0.000000
 [INFO]: Statistic for TX & RX number 7
-[INFO]: Packets received properly: 108
+[INFO]: Packets received properly: 7
 [INFO]: Packets received incorrectly: 0
 [INFO]: BER: 0.000000
 [INFO]: GENERAL STATISTICS
-[INFO]: Packets received properly: 914
-[INFO]: Packets received incorrectly: 0
-[INFO]: BER: 0.000000
-[INFO]: Max BER: 0.000000
-[INFO]: Average retransmission count: 0.043764
-[INFO]: Average packet delay: 4.581839 ms
-[INFO]: Average packet waiting exit from bufor: 4.573728 ms
-[INFO]: Bit rate: 45.745746 b/s
+[INFO]: Packets received properly: 76
+[INFO]: Packets received incorrectly: 7
+[INFO]: BER: 0.156250
+[INFO]: Max BER: 1.000000
+[INFO]: Average retransmission count: 3.789474
+[INFO]: Average packet delay: 4.984961 ms
+[INFO]: Average packet waiting exit from bufor: 5.616803 ms
+[INFO]: Bit rate: 7.600000 b/s

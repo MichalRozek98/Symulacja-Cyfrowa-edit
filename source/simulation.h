@@ -47,7 +47,8 @@ private:
   std::vector<Packet*> packets_received_;
   std::vector<Packet*> packets_not_received_;
   double lambda_ = 0.01;
-  size_t initial_phase_time_;
+  double ter_probability_ = 0.2;
+  size_t initial_phase_time_ = 0;
   size_t retransmission_count_ = 0;
   size_t average_delay_packet_ = 0;
   size_t average_waiting_packet_exit_from_bufor_ = 0;
