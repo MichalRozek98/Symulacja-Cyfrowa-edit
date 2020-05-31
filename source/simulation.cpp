@@ -272,10 +272,11 @@ void Simulation::StartTransmission()
 
       int i = generator_->RandMinMax(0, network_->return_kreceiver_transmitter_count());
       bool watch = false;
+      int control = 0; 
       
       do
       {
-        if(which_transmitter_is_sending_ == i)
+        if(which_transmitter_is_sending_ == i && control <= 5)
         {
           i = generator_->RandMinMax(0, network_->return_kreceiver_transmitter_count() - i);
         }
@@ -294,7 +295,14 @@ void Simulation::StartTransmission()
         {
           i = generator_->RandMinMax(0, network_->return_kreceiver_transmitter_count());
         }   
+        ++control;
+
       } while (!watch);
+
+      if (channel_of_network_->ReturnPacketInProgress().size() == 2 && channel_of_network_->ReturnPacketInProgress()[0] == channel_of_network_->ReturnPacketInProgress()[1])
+      {
+        channel_of_network_->ReturnPacketInProgress().pop_back();
+      }
 
       channel_of_network_->set_channel_busy(true);
 }

@@ -1,41 +1,41 @@
 [INFO]: Statistic for TX & RX number 0
-[INFO]: Packets received properly: 144
-[INFO]: Packets received incorrectly: 1
-[INFO]: BER: 0.006944
+[INFO]: Packets received properly: 114
+[INFO]: Packets received incorrectly: 52
+[INFO]: BER: 0.456140
 [INFO]: Statistic for TX & RX number 1
-[INFO]: Packets received properly: 119
-[INFO]: Packets received incorrectly: 0
-[INFO]: BER: 0.000000
+[INFO]: Packets received properly: 113
+[INFO]: Packets received incorrectly: 32
+[INFO]: BER: 0.283186
 [INFO]: Statistic for TX & RX number 2
-[INFO]: Packets received properly: 101
-[INFO]: Packets received incorrectly: 3
-[INFO]: BER: 0.029703
-[INFO]: Statistic for TX & RX number 3
-[INFO]: Packets received properly: 109
-[INFO]: Packets received incorrectly: 3
-[INFO]: BER: 0.027523
-[INFO]: Statistic for TX & RX number 4
-[INFO]: Packets received properly: 115
-[INFO]: Packets received incorrectly: 2
-[INFO]: BER: 0.017391
-[INFO]: Statistic for TX & RX number 5
 [INFO]: Packets received properly: 103
-[INFO]: Packets received incorrectly: 0
-[INFO]: BER: 0.000000
-[INFO]: Statistic for TX & RX number 6
+[INFO]: Packets received incorrectly: 27
+[INFO]: BER: 0.262136
+[INFO]: Statistic for TX & RX number 3
 [INFO]: Packets received properly: 94
-[INFO]: Packets received incorrectly: 2
-[INFO]: BER: 0.021277
+[INFO]: Packets received incorrectly: 32
+[INFO]: BER: 0.340426
+[INFO]: Statistic for TX & RX number 4
+[INFO]: Packets received properly: 84
+[INFO]: Packets received incorrectly: 30
+[INFO]: BER: 0.357143
+[INFO]: Statistic for TX & RX number 5
+[INFO]: Packets received properly: 93
+[INFO]: Packets received incorrectly: 27
+[INFO]: BER: 0.290323
+[INFO]: Statistic for TX & RX number 6
+[INFO]: Packets received properly: 89
+[INFO]: Packets received incorrectly: 22
+[INFO]: BER: 0.247191
 [INFO]: Statistic for TX & RX number 7
-[INFO]: Packets received properly: 102
-[INFO]: Packets received incorrectly: 1
-[INFO]: BER: 0.009804
+[INFO]: Packets received properly: 88
+[INFO]: Packets received incorrectly: 22
+[INFO]: BER: 0.250000
 [INFO]: GENERAL STATISTICS
-[INFO]: Packets received properly: 852
-[INFO]: Packets received incorrectly: 12
-[INFO]: BER: 1.408027 %
-[INFO]: Max BER: 2.970297 %
-[INFO]: Average retransmission count: 0.250000
-[INFO]: Average packet delay: 7.108710 ms
-[INFO]: Average packet waiting exit from bufor: 7.185232 ms
-[INFO]: Bit rate: 34.080000 b/s
+[INFO]: Packets received properly: 757
+[INFO]: Packets received incorrectly: 244
+[INFO]: BER: 31.081801 %
+[INFO]: Max BER: 45.614035 %
+[INFO]: Average retransmission count: 0.706737
+[INFO]: Average packet delay: 22.937863 ms
+[INFO]: Average packet waiting exit from bufor: 30.230437 ms
+[INFO]: Bit rate: 16.822222 b/s
