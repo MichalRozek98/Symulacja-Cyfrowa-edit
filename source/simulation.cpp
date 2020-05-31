@@ -73,18 +73,18 @@ void Simulation::Execute()
       }
 
       // checking all buffers in all transmitters if is any packet to send
-      bool is_any_packet_in_buffers = false;
+       is_any_packet_in_buffers_ = false;
 
       for(int i=0; i<network_->return_kreceiver_transmitter_count(); ++i)
       {
         if (network_->return_vector_of_transmitters()[i]->return_packet_vector().size() != 0)
         {
-          is_any_packet_in_buffers = true;
+          is_any_packet_in_buffers_ = true;
           break;
         }
         else
         {
-          is_any_packet_in_buffers = false;
+          is_any_packet_in_buffers_ = false;
         }
       }
 
@@ -99,7 +99,7 @@ void Simulation::Execute()
         network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_);
       }
 
-      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_) )
+      if (CanStartTransmission())
       {
          StartTransmission();
 
@@ -110,7 +110,7 @@ void Simulation::Execute()
          network_->set_event_triggered(false);
       }
 
-      if (!waiting_channel_busy_ && is_any_packet_in_buffers && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
+      if (CanWaitNextGap())
       {
         if (network_->WaitForNextGap(logger_, generator_))
         {
@@ -119,7 +119,7 @@ void Simulation::Execute()
         }  
       }
 
-      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_) )
+      if (CanStartRetransmission())
       {
          Retransmission();
          network_->set_retransmission_clock(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, retransmission_packet_time_max_));
@@ -127,13 +127,19 @@ void Simulation::Execute()
          network_->set_waiting_random_time_rctpk(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, waiting_random_rctpk_time_max_) * network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_uniform_generator()->RandMinMax(0, network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0]->return_current_number_of_retransmission())); // CTPk * R
       }
 
-      if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_) )
+      if (CanWaitNextGapRetransmission())
       {
         if (network_->WaitForNextGap(logger_, generator_))
         {
           network_->set_waiting_if_channel_is_busy(waiting_time_when_channel_is_busy_pt_);
           network_->set_event_triggered(false);
         }
+      }
+
+      if (ack_notification_flag_)
+      {
+        network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReceivePacketACK(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0], logger_, channel_of_network_->return_colision_status(), network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_zero_one_generator(), ter_probability_);
+        ack_notification_flag_ = false;
       }
 
       if (end_transmission_flag_ && network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_, true)) // watch if packet sent correctly
@@ -155,13 +161,13 @@ void Simulation::Execute()
 
       if (end_transmission_flag_ && !network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_, false)) // if ACK is false try to retransmiss packet
       {
-        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() < 15)
+        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() < 2)
         {
           channel_of_network_->set_channel_busy(false);
           is_retransmission_ = true;
         }
 
-        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() >= 15)
+        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() >= 2)
         {
           if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
           {
@@ -236,23 +242,23 @@ void Simulation::StartSimulation()
   logger_->Information("Lambda: " + std::to_string(lambda_));
   logger_->Information("TER: " + std::to_string(ter_probability_));
 
- for (int i = 0; i < network_->return_kreceiver_transmitter_count(); ++i)
- {
-   network_->return_vector_of_transmitters()[i]->set_clock(network_->return_vector_of_transmitters()[i]->return_uniform_generator()->RndExp(lambda_));
- }
+   for (int i = 0; i < network_->return_kreceiver_transmitter_count(); ++i)
+   {
+     network_->return_vector_of_transmitters()[i]->set_clock(network_->return_vector_of_transmitters()[i]->return_uniform_generator()->RndExp(lambda_));
+   }
 
- size_t simulation_time;
- std::cout << std::endl;
- std::cout << "Write Simulation time [ms]: ";
- std::cin >> simulation_time;
- supervision_of_simulation_time_ = new SimulationTime(simulation_time*10);
- logger_->Information("Total simulation time has been set to: " + std::to_string((double)((double)supervision_of_simulation_time_->return_total_time()/10)) + " ms...");
- std::cout << std::endl;
- std::cout << "Write the time of the initial phase [ms]: ";
- std::cin >> initial_phase_time_;
- initial_phase_time_ *= 10;
+   size_t simulation_time;
+   std::cout << std::endl;
+   std::cout << "Write Simulation time [ms]: ";
+   std::cin >> simulation_time;
+   supervision_of_simulation_time_ = new SimulationTime(simulation_time*10);
+   logger_->Information("Total simulation time has been set to: " + std::to_string((double)((double)supervision_of_simulation_time_->return_total_time()/10)) + " ms...");
+   std::cout << std::endl;
+   std::cout << "Write the time of the initial phase [ms]: ";
+   std::cin >> initial_phase_time_;
+   initial_phase_time_ *= 10;
 
- logger_->Information("Starting simulation using the method M1...");
+   logger_->Information("Starting simulation using the method M1...");
 }
 
 void Simulation::EndSimulation()
@@ -289,21 +295,8 @@ void Simulation::StartTransmission()
           i = generator_->RandMinMax(0, network_->return_kreceiver_transmitter_count());
         }   
       } while (!watch);
-      
 
-      /*for (int i = 0; i < network_->return_kreceiver_transmitter_count(); ++i)
-      {
-        if (network_->return_vector_of_transmitters()[i]->return_packet_vector().size() != 0)
-        {
-          channel_of_network_->GetPacketAndSend(network_->return_vector_of_transmitters()[i]->return_packet_vector()[0], logger_);
-          which_transmitter_is_sending_ = i;
-
-          if(generator_->RndZeroOne(0.05) == 0)
-            break;
-        }
-      }*/
-
-    channel_of_network_->set_channel_busy(true);
+      channel_of_network_->set_channel_busy(true);
 }
 
 void Simulation::Retransmission()
@@ -318,7 +311,7 @@ void Simulation::AckNotification()
 {
   network_->set_transmission_clock(-1);
   network_->set_retransmission_clock(-1);
-  network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReceivePacketACK(network_->return_vector_of_transmitters()[which_transmitter_is_sending_]->return_packet_vector()[0], logger_, channel_of_network_->return_colision_status(), generator_, ter_probability_);
+  ack_notification_flag_ = true;
 }
 
 void Simulation::EndTransmission()
@@ -388,6 +381,7 @@ void Simulation::Initialize()
   average_delay_packet_ = 0;
   average_waiting_packet_exit_from_bufor_ = 0;
   end_transmission_flag_ = false;
+  ack_notification_flag_ = false;
 }
 
 void Simulation::SaveStatistics()
@@ -432,12 +426,44 @@ void Simulation::SaveStatistics()
 
   logger_->Information("Packets received properly: " + std::to_string(packets_received_.size()));
   logger_->Information("Packets received incorrectly: " + std::to_string(packets_not_received_.size()));
-  logger_->Information("BER: " + std::to_string(ber_rate_average));
-  logger_->Information("Max BER: " + std::to_string(ber_rate_max));
+  logger_->Information("BER: " + std::to_string(ber_rate_average*100) + " %");
+  logger_->Information("Max BER: " + std::to_string(ber_rate_max*100) + " %");
   logger_->Information("Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()));
   logger_->Information("Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms");
   logger_->Information("Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms");
   logger_->Information("Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s");
+}
+
+bool Simulation::CanStartTransmission()
+{
+  if (!waiting_channel_busy_ && is_any_packet_in_buffers_ && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_))
+    return true;
+  else
+    return false;
+}
+
+bool Simulation::CanWaitNextGap()
+{
+  if (!waiting_channel_busy_ && is_any_packet_in_buffers_ && !is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_))
+    return true;
+  else
+    return false;
+}
+
+bool Simulation::CanStartRetransmission()
+{
+  if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, false) && network_->CheckProbabilityPT(logger_, false, generator_))
+    return true;
+  else
+    return false;
+}
+
+bool Simulation::CanWaitNextGapRetransmission()
+{
+  if (network_->return_waiting_random_time_rctpk() == 0 && !waiting_channel_busy_ && is_retransmission_ && !channel_of_network_->return_if_is_channel_busy(logger_, true) && !network_->CheckProbabilityPT(logger_, true, generator_))
+    return true;
+  else
+    return false;
 }
 
 

@@ -59,7 +59,6 @@ bool Receiver::ReceivePacketACK(Packet* receive_packet, Logger* logger, bool col
   else if((!this->TerProbabilityOfNotCorrectReceived(generator, ter) && colission) || (this->TerProbabilityOfNotCorrectReceived(generator, ter) && colission))
   {
     logger->Error("Packet with id: " + std::to_string(receive_packet->return_packet_id()) + " wasn't correctly received from Transmitter: " + std::to_string(this->ReturnIdReceiver()) + " because of Colission...");
-    this->TerProbabilityOfNotCorrectReceived(generator, 1);
     this->ack_notification_ = false;
   }
   else

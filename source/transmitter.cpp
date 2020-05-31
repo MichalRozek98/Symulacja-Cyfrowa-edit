@@ -2,11 +2,12 @@
 #include <iostream>
 #include "generator.h"
 
-Transmitter::Transmitter(size_t id, int seed_uniform, int seed_exp)
+Transmitter::Transmitter(size_t id, int seed_uniform, int seed_exp, int seed_zero_one)
 {
   id_transmitter_ = id;
   uniform_generator_ = new Generator(seed_uniform);
   exp_generator_ = new Generator(seed_exp);
+  zero_one_generator_ = new Generator(seed_zero_one);
 }
 
 Transmitter::~Transmitter()

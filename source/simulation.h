@@ -25,6 +25,10 @@ public:
   void UpdateClock();
   void Initialize();
   void SaveStatistics();
+  bool CanStartTransmission();
+  bool CanWaitNextGap();
+  bool CanStartRetransmission();
+  bool CanWaitNextGapRetransmission();
 
 private:
   CsmaNetwork* network_;
@@ -51,8 +55,10 @@ private:
   size_t initial_phase_time_ = 0;
   size_t retransmission_count_ = 0;
   size_t average_delay_packet_ = 0;
+  bool is_any_packet_in_buffers_ = false;
   size_t average_waiting_packet_exit_from_bufor_ = 0;
   bool end_transmission_flag_ = false;
+  bool ack_notification_flag_ = false;
 };
 
 #endif // SIMULATION_H_

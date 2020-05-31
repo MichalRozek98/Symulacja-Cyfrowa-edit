@@ -10,7 +10,7 @@
 class Transmitter
 {
 public:
-  Transmitter(size_t id, int seed_uniform, int seed_exp);
+  Transmitter(size_t id, int seed_uniform, int seed_exp, int seed_zero_one);
   ~Transmitter();
 
   void GeneratePacket(size_t packet_size, Logger* logger, size_t actual_clock);
@@ -30,6 +30,7 @@ public:
 
   Generator* return_uniform_generator() { return uniform_generator_; };
   Generator* return_exp_generator() { return exp_generator_; };
+  Generator* return_zero_one_generator() { return zero_one_generator_; };
 
 private:
   size_t id_transmitter_; // identicificator number of receiver which will be equal with receiver's id
@@ -37,6 +38,7 @@ private:
   size_t clock_ = -1;
   Generator* uniform_generator_;
   Generator* exp_generator_;
+  Generator* zero_one_generator_;
 
 };
 

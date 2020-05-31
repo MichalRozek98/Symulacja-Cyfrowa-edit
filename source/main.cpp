@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
   Logger* logger = new Logger("SimulationLogs.txt");
 
   int seed_ter = 99;
-  Generator* generator_ter_pt = new Generator(seed_ter);
+  Generator* generator_pt = new Generator(seed_ter);
 
   std::cout << "Select simulation mode: \n" << "1 - continuously \n" << "2 - stepwise \n";
   int mode_type = 0;
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 
   int number_of_rands = 100000;
 
-  for (int i = 0; i < number_of_rands * 160; ++i)
+  for (int i = 0; i < number_of_rands * 240; ++i)
   {
     auto rand_number = generator->Rnd();
 
@@ -58,6 +58,21 @@ int main(int argc, char* argv[])
     }
   }
 
+  int which_set_of_seed = 0;
+
+  while (which_set_of_seed < 1 || which_set_of_seed > 10)
+  {
+    std::cout << "Choose your set of seeds (1-10): ";
+    std::cin >> which_set_of_seed;
+    std::cout << std::endl;
+  }
+
+  which_set_of_seed--;
+
+  for (int i = 0; i < 24 * which_set_of_seed; ++i)
+  {
+    seed_vector.pop_back();
+  }
 
     for (int i = 0; i < network->return_kreceiver_transmitter_count(); ++i) // creating transmitters and receivers with correct ids
     {
@@ -65,8 +80,10 @@ int main(int argc, char* argv[])
       seed_vector.pop_back();
       auto seed_to_write_exp = seed_vector.back();
       seed_vector.pop_back();
+      auto seed_to_write_zero_one = seed_vector.back();
+      seed_vector.pop_back();
 
-      Transmitter* transmitter_one = new Transmitter(network->return_vector_of_transmitters().size(), seed_to_write_uniform, seed_to_write_exp);
+      Transmitter* transmitter_one = new Transmitter(network->return_vector_of_transmitters().size(), seed_to_write_uniform, seed_to_write_exp, seed_to_write_zero_one);
       Receiver* receiver_one = new Receiver(network->return_vector_of_receivers().size());
       network->PushBackToVectorOfTransmitters(transmitter_one);
       network->PushBackToVectorOfReceivers(receiver_one);
@@ -95,7 +112,7 @@ int main(int argc, char* argv[])
       break;
     }
 
-    Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator_ter_pt);
+    Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator_pt);
     Simulation_in_progress->Execute();
 
   return 0;
