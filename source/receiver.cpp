@@ -2,7 +2,7 @@
 #include "receiver.h"
 #include "generator.h"
 
-Receiver::Receiver(unsigned id)
+Receiver::Receiver(size_t id)
 {
   id_receiver_ = id;
   ack_notification_ = false;
@@ -12,14 +12,9 @@ Receiver::~Receiver()
 {
 }
 
-void Receiver::SetIdReceiver(unsigned int id)
+void Receiver::SetIdReceiver(size_t id)
 {
   id_receiver_ = id;
-}
-
-int Receiver::ReturnIdReceiver()
-{
-  return  id_receiver_;
 }
 
 bool Receiver::ReturnAckNotification(Logger* logger, bool write)

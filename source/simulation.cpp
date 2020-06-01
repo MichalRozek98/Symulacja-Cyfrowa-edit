@@ -161,13 +161,13 @@ void Simulation::Execute()
 
       if (end_transmission_flag_ && !network_->return_vector_of_receivers()[which_transmitter_is_sending_]->ReturnAckNotification(logger_, false)) // if ACK is false try to retransmiss packet
       {
-        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() < 2)
+        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() < channel_of_network_->return_k_max_retransmission_tries())
         {
           channel_of_network_->set_channel_busy(false);
           is_retransmission_ = true;
         }
 
-        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() >= 2)
+        if (channel_of_network_->ReturnPacketInProgress()[0]->return_current_number_of_retransmission() >= channel_of_network_->return_k_max_retransmission_tries())
         {
           if (supervision_of_simulation_time_->return_time_now() >= initial_phase_time_)
           {

@@ -39,7 +39,6 @@ private:
   Generator* uniform_generator_;
   Generator* exp_generator_;
   Generator* zero_one_generator_;
-
 };
 
 #endif // TRANSMITTER_H_

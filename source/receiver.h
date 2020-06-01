@@ -10,11 +10,11 @@
 class Receiver
 {
 public:
-  Receiver(unsigned id);
+  Receiver(size_t id);
   ~Receiver();
 
-  void SetIdReceiver(unsigned int id);
-  int ReturnIdReceiver();
+  void SetIdReceiver(size_t id);
+  size_t ReturnIdReceiver() { return id_receiver_; };
 
   bool ReturnAckNotification(Logger* logger, bool write); // method which will return flag with logs
   bool return_ack_flag() { return ack_notification_; }; // method which will return just flag without logs
@@ -29,7 +29,7 @@ public:
   void PushBackPacketsNotReceived(Packet* packet);
 
 private:
-  unsigned int id_receiver_; // identicificator number of receiver which will be equal with transmitter's id
+  size_t id_receiver_; // identicificator number of receiver which will be equal with transmitter's id
   bool ack_notification_; // send ACK notification about sent packet properly
   std::vector<Packet*> packets_received_;
   std::vector<Packet*> packets_not_received_;

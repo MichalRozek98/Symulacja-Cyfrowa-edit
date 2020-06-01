@@ -28,7 +28,7 @@ public:
 
 private:
   std::vector<Packet*> packets_in_progress_; // using to check if is an collision, we will push in this vector packets and after send we will delete
-  static const unsigned int kMaxRetrasmissionTries_ = 15; // max retrasmission tries LR equal 15 (in my example)
+  static const size_t kMaxRetrasmissionTries_ = 2; // max retrasmission tries LR equal 15 (in my example)
   bool is_channel_busy_; // if channel is busy we have to wait
   bool collision_; // checking in channel checking for collision
 };
