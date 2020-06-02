@@ -9,6 +9,9 @@
 #include "csma_network.h"
 #include "logger.h"
 #include "generator.h"
+#include <iostream>
+#include <fstream>
+#include <iterator>
 
 class Simulation
 {
@@ -29,6 +32,7 @@ public:
   bool CanWaitNextGap();
   bool CanStartRetransmission();
   bool CanWaitNextGapRetransmission();
+  
 
 private:
   CsmaNetwork* network_;
@@ -51,7 +55,7 @@ private:
   std::vector<Packet*> packets_received_;
   std::vector<Packet*> packets_not_received_;
   double lambda_ = 0.01;
-  double ter_probability_ = 0.2;
+  double ter_probability_ = 0.3;
   size_t initial_phase_time_ = 0;
   size_t retransmission_count_ = 0;
   size_t average_delay_packet_ = 0;
@@ -59,6 +63,7 @@ private:
   size_t average_waiting_packet_exit_from_bufor_ = 0;
   bool end_transmission_flag_ = false;
   bool ack_notification_flag_ = false;
+  std::vector<double> ber_statistics_;
 };
 
 #endif // SIMULATION_H_
