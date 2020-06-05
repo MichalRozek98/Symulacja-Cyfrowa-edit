@@ -232,6 +232,8 @@ void Simulation::Execute()
     else if(changing == 2)
       initial_phase_time_ += 50;
   }
+
+  std::getchar();
 }
 
 void Simulation::StartSimulation()
