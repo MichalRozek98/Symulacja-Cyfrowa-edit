@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
       break;
     }
 
-    Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator_pt);
+    Simulation* Simulation_in_progress = new Simulation(network, channel_of_network, supervision_of_simulation_time, logger, generator_pt, ++which_set_of_seed);
     Simulation_in_progress->Execute();
 
   return 0;

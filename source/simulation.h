@@ -16,7 +16,7 @@
 class Simulation
 {
 public:
-  Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger, Generator* generator);
+  Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger, Generator* generator, int packet_seed);
   ~Simulation();
   void Execute();
   void StartSimulation();
@@ -28,6 +28,7 @@ public:
   void UpdateClock();
   void Initialize();
   void SaveStatistics();
+  void SaveStatistics_5ms();
   bool CanStartTransmission();
   bool CanWaitNextGap();
   bool CanStartRetransmission();
@@ -64,6 +65,8 @@ private:
   bool end_transmission_flag_ = false;
   bool ack_notification_flag_ = false;
   std::vector<double> ber_statistics_;
+  size_t time_statistics = 0;
+  int seed = 0;
 };
 
 #endif // SIMULATION_H_

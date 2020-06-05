@@ -5,8 +5,9 @@
 #include "generator.h"
 
 std::ofstream output_file("statistics_for_a_few_simulations.txt", std::ios_base::app);
+std::ofstream output_file_5ms("statistics_after_5ms.txt", std::ios_base::app);
 
-Simulation::Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger, Generator* generator)
+Simulation::Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger, Generator* generator, int packed_seed)
 {
   network_ = network;
   channel_of_network_ = channel_of_network;
@@ -14,6 +15,7 @@ Simulation::Simulation(CsmaNetwork* network, Channel* channel_of_network, Simula
   logger_ = logger;
   stop_transmission_when_no_packets_ = false;
   generator_ = generator;
+  seed = packed_seed;
 }
 
 Simulation::~Simulation()
@@ -47,6 +49,9 @@ void Simulation::Execute()
 
   output_file << '\n' << "---- NEW SIMULATION ----" << std::endl;
   output_file << '\n';
+
+  output_file_5ms << '\n' << "---- NEW SIMULATION ----" << std::endl;
+  output_file_5ms << '\n';
 
   for (int i = 0; i < number_of_simulation; ++i)
   {
@@ -212,6 +217,12 @@ void Simulation::Execute()
             channel_of_network_->ReturnPacketInProgress().erase(channel_of_network_->ReturnPacketInProgress().begin());
           }
         }
+      }
+
+      if (supervision_of_simulation_time_->return_time_now() == time_statistics)
+      {
+        time_statistics += 50;
+        SaveStatistics_5ms();
       }
 
       UpdateClock();
@@ -435,6 +446,7 @@ void Simulation::Initialize()
   ack_notification_flag_ = false;
   packets_received_.clear();
   packets_not_received_.clear();
+  time_statistics = 0;
 }
 
 void Simulation::SaveStatistics()
@@ -472,7 +484,8 @@ void Simulation::SaveStatistics()
   }
 
 
-  ber_rate_average /= ber_vector.size();
+  if (ber_vector.size() != 0)
+    ber_rate_average /= ber_vector.size();
 
   logger_->Information("GENERAL STATISTICS");
   std::cout << "\n";
@@ -481,24 +494,112 @@ void Simulation::SaveStatistics()
   logger_->Information("Packets received incorrectly: " + std::to_string(packets_not_received_.size()));
   logger_->Information("BER: " + std::to_string(ber_rate_average*100) + " %");
   logger_->Information("Max BER: " + std::to_string(ber_rate_max*100) + " %");
-  logger_->Information("Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()));
-  logger_->Information("Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms");
-  logger_->Information("Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms");
+
+  if (packets_received_.size() == 0)
+  {
+    logger_->Information("Average retransmission count: " + std::to_string(0));
+    logger_->Information("Average packet delay: " + std::to_string(0) + " ms");
+    logger_->Information("Average packet waiting exit from bufor: " + std::to_string(0) + " ms");
+  }
+  else
+  {
+    logger_->Information("Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()));
+    logger_->Information("Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms");
+    logger_->Information("Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms");
+  }
+
   logger_->Information("Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s");
 
   
   output_file << "Lambda: " << lambda_ << '\n';
   output_file << "Total simulation time: " << supervision_of_simulation_time_->return_total_time()/10 << " ms" << '\n';
   output_file << "Initial phase time: " << initial_phase_time_/10 << '\n';
+  output_file << "Packet of seed: " << std::to_string(seed) << '\n';
   output_file << "Packets received properly: " + std::to_string(packets_received_.size()) << '\n';
   output_file << "Packets received incorrectly: " + std::to_string(packets_not_received_.size()) << '\n';
   output_file << "BER: " + std::to_string(ber_rate_average * 100) + " %" << '\n';
   output_file << "Max BER: " + std::to_string(ber_rate_max * 100) + " %" << '\n';
-  output_file << "Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()) << '\n';
-  output_file << "Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
-  output_file << "Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
+
+  if (packets_received_.size() == 0)
+  {
+    output_file << "Average retransmission count: " + std::to_string(0) << '\n';
+    output_file << "Average packet delay: " + std::to_string(0) + " ms" << '\n';
+    output_file << "Average packet waiting exit from bufor: " + std::to_string(0) + " ms" << '\n';
+  }
+  else
+  {
+    output_file << "Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()) << '\n';
+    output_file << "Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
+    output_file << "Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
+  }
+
   output_file << "Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s" << '\n';
   output_file << '\n';
+}
+
+void Simulation::SaveStatistics_5ms()
+{
+  logger_ = new Logger("Statistics.txt");
+
+  std::cout << "\n";
+  std::vector<double> ber_vector;
+  double ber_rate = 0;
+  double ber_rate_average = 0;
+  double ber_rate_max = 0;
+
+  for (int i = 0; i < network_->return_kreceiver_transmitter_count(); ++i)
+  {
+    logger_->Information("Statistic for TX & RX number " + std::to_string(i));
+    logger_->Information("Packets received properly: " + std::to_string(network_->return_vector_of_receivers()[i]->return_packets_received().size()));
+    logger_->Information("Packets received incorrectly: " + std::to_string(network_->return_vector_of_receivers()[i]->return_packets_not_received().size()));
+    if (network_->return_vector_of_receivers()[i]->return_packets_received().size() != 0)
+    {
+      ber_rate = (double)network_->return_vector_of_receivers()[i]->return_packets_not_received().size() / (double)network_->return_vector_of_receivers()[i]->return_packets_received().size();
+      ber_vector.push_back(ber_rate);
+    }
+    logger_->Information("BER: " + std::to_string(ber_rate));
+    std::cout << "\n";
+  }
+
+  for (int i = 0; i < ber_vector.size(); ++i)
+  {
+    ber_rate_average += ber_vector[i];
+
+    if (ber_vector[i] > ber_rate_max)
+    {
+      ber_rate_max = ber_vector[i];
+    }
+  }
+
+  if (ber_vector.size() != 0)
+    ber_rate_average /= ber_vector.size();
+
+
+  output_file_5ms << "Lambda: " << lambda_ << '\n';
+  output_file_5ms << "Total simulation time: " << supervision_of_simulation_time_->return_total_time() / 10 << " ms" << '\n';
+  output_file_5ms << "Initial phase time: " << initial_phase_time_ / 10 << '\n';
+  output_file_5ms << "Packet of seed: " << std::to_string(seed) << '\n';
+  output_file_5ms << "Time now: " << supervision_of_simulation_time_->return_time_now() / 10 << " ms" << '\n';
+  output_file_5ms << "Packets received properly: " + std::to_string(packets_received_.size()) << '\n';
+  output_file_5ms << "Packets received incorrectly: " + std::to_string(packets_not_received_.size()) << '\n';
+  output_file_5ms << "BER: " + std::to_string(ber_rate_average * 100) + " %" << '\n';
+  output_file_5ms << "Max BER: " + std::to_string(ber_rate_max * 100) + " %" << '\n';
+
+  if (packets_received_.size() == 0)
+  {
+    output_file_5ms << "Average retransmission count: " + std::to_string(0) << '\n';
+    output_file_5ms << "Average packet delay: " + std::to_string(0) + " ms" << '\n';
+    output_file_5ms << "Average packet waiting exit from bufor: " + std::to_string(0) + " ms" << '\n';
+  }
+  else
+  {
+    output_file_5ms << "Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()) << '\n';
+    output_file_5ms << "Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
+    output_file_5ms << "Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
+  }
+
+  output_file_5ms << "Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s" << '\n';
+  output_file_5ms << '\n';
 }
 
 bool Simulation::CanStartTransmission()
