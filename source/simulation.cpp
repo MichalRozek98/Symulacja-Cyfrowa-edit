@@ -488,6 +488,7 @@ void Simulation::SaveStatistics()
 
   
   output_file << "Lambda: " << lambda_ << '\n';
+  output_file << "Total simulation time: " << supervision_of_simulation_time_->return_total_time()/10 << " ms" << '\n';
   output_file << "Initial phase time: " << initial_phase_time_/10 << '\n';
   output_file << "Packets received properly: " + std::to_string(packets_received_.size()) << '\n';
   output_file << "Packets received incorrectly: " + std::to_string(packets_not_received_.size()) << '\n';
