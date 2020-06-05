@@ -26,7 +26,6 @@ Simulation::~Simulation()
 
 void Simulation::Execute()
 {
-  srand((int)time(NULL));
   size_t number_of_simulation = 1;
   
   std::cout << "Write your number of simulation: ";
@@ -421,7 +420,6 @@ void Simulation::Initialize()
   network_->set_retransmission_clock(-1);
   network_->set_ack_notification_clock(-1);
   network_->set_waiting_if_channel_is_busy(0);
-  network_->set_waiting_random_time_rctpk(rand() % waiting_random_rctpk_time_max_);
   network_->set_event_triggered(false);
   channel_of_network_->set_status_of_colission(false);
   channel_of_network_->ReturnPacketInProgress().clear();
