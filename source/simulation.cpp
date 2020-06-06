@@ -239,7 +239,7 @@ void Simulation::Execute()
     SaveStatistics();
 
     if (changing == 1)
-      lambda_ += 0.001;
+      lambda_ += 0.002;
     else if(changing == 2)
       initial_phase_time_ += 50;
   }
