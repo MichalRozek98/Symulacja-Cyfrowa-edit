@@ -1,32 +1,3790 @@
 
 ---- NEW SIMULATION ----
 
-Lambda: 0.008
+Lambda: 0.01
 Total simulation time: 2500 ms
-Initial phase time: 0
-Packet of seed: 2
-Packets received properly: 785
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 768
+Packets received incorrectly: 15
+BER: 1.958825 %
+Max BER: 4.807692 %
+Average retransmission count: 0.429688
+Average packet delay: 7.675421 ms
+Average packet waiting exit from bufor: 7.824543 ms
+Bit rate: 30.720000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 753
 Packets received incorrectly: 24
-BER: 3.112641 %
-Max BER: 7.843137 %
-Average retransmission count: 0.385987
-Average packet delay: 6.205048 ms
-Average packet waiting exit from bufor: 6.395359 ms
-Bit rate: 31.400000 b/s
+BER: 2.654314 %
+Max BER: 4.838710 %
+Average retransmission count: 0.375830
+Average packet delay: 1.691806 ms
+Average packet waiting exit from bufor: 1.723116 ms
+Bit rate: 30.120000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 770
+Packets received incorrectly: 23
+BER: 2.813118 %
+Max BER: 6.944444 %
+Average retransmission count: 0.371429
+Average packet delay: 6.327995 ms
+Average packet waiting exit from bufor: 6.521317 ms
+Bit rate: 30.800000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 759
+Packets received incorrectly: 19
+BER: 2.426974 %
+Max BER: 3.482587 %
+Average retransmission count: 0.400527
+Average packet delay: 6.701248 ms
+Average packet waiting exit from bufor: 6.857708 ms
+Bit rate: 30.360000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 749
+Packets received incorrectly: 23
+BER: 2.567177 %
+Max BER: 4.117647 %
+Average retransmission count: 0.421896
+Average packet delay: 6.138483 ms
+Average packet waiting exit from bufor: 6.287039 ms
+Bit rate: 29.960000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 775
+Packets received incorrectly: 14
+BER: 1.956262 %
+Max BER: 3.389831 %
+Average retransmission count: 0.392258
+Average packet delay: 8.074337 ms
+Average packet waiting exit from bufor: 8.192395 ms
+Bit rate: 31.000000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 755
+Packets received incorrectly: 23
+BER: 2.429784 %
+Max BER: 3.333333 %
+Average retransmission count: 0.403974
+Average packet delay: 7.832207 ms
+Average packet waiting exit from bufor: 8.124326 ms
+Bit rate: 30.200000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 749
+Packets received incorrectly: 29
+BER: 2.938715 %
+Max BER: 5.128205 %
+Average retransmission count: 0.385848
+Average packet delay: 8.681597 ms
+Average packet waiting exit from bufor: 9.038766 ms
+Bit rate: 29.960000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 747
+Packets received incorrectly: 27
+BER: 3.064494 %
+Max BER: 4.294479 %
+Average retransmission count: 0.397590
+Average packet delay: 9.047632 ms
+Average packet waiting exit from bufor: 9.363321 ms
+Bit rate: 29.880000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 752
+Packets received incorrectly: 31
+BER: 3.411885 %
+Max BER: 6.280193 %
+Average retransmission count: 0.375000
+Average packet delay: 9.114077 ms
+Average packet waiting exit from bufor: 9.523282 ms
+Bit rate: 30.080000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 780
+Packets received incorrectly: 22
+BER: 2.956928 %
+Max BER: 5.911330 %
+Average retransmission count: 0.384615
+Average packet delay: 9.363988 ms
+Average packet waiting exit from bufor: 9.585177 ms
+Bit rate: 31.200000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 798
+Packets received incorrectly: 18
+BER: 2.591051 %
+Max BER: 3.636364 %
+Average retransmission count: 0.348371
+Average packet delay: 9.740320 ms
+Average packet waiting exit from bufor: 9.924642 ms
+Bit rate: 31.920000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 761
+Packets received incorrectly: 31
+BER: 3.200474 %
+Max BER: 4.819277 %
+Average retransmission count: 0.381078
+Average packet delay: 9.054565 ms
+Average packet waiting exit from bufor: 9.434363 ms
+Bit rate: 30.440000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 749
+Packets received incorrectly: 28
+BER: 3.292953 %
+Max BER: 4.878049 %
+Average retransmission count: 0.363151
+Average packet delay: 10.239183 ms
+Average packet waiting exit from bufor: 10.565064 ms
+Bit rate: 29.960000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 773
+Packets received incorrectly: 19
+BER: 2.730651 %
+Max BER: 4.639175 %
+Average retransmission count: 0.360931
+Average packet delay: 9.931959 ms
+Average packet waiting exit from bufor: 10.223402 ms
+Bit rate: 30.920000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 769
+Packets received incorrectly: 24
+BER: 2.809335 %
+Max BER: 3.723404 %
+Average retransmission count: 0.392718
+Average packet delay: 9.746343 ms
+Average packet waiting exit from bufor: 10.067858 ms
+Bit rate: 30.760000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 763
+Packets received incorrectly: 22
+BER: 2.697549 %
+Max BER: 4.639175 %
+Average retransmission count: 0.394495
+Average packet delay: 10.557569 ms
+Average packet waiting exit from bufor: 10.837931 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 724
+Packets received incorrectly: 34
+BER: 3.523874 %
+Max BER: 5.235602 %
+Average retransmission count: 0.412983
+Average packet delay: 10.424122 ms
+Average packet waiting exit from bufor: 10.968340 ms
+Bit rate: 28.960000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 767
+Packets received incorrectly: 17
+BER: 2.765369 %
+Max BER: 3.773585 %
+Average retransmission count: 0.411995
+Average packet delay: 10.469065 ms
+Average packet waiting exit from bufor: 10.702578 ms
+Bit rate: 30.680000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 762
+Packets received incorrectly: 21
+BER: 2.580432 %
+Max BER: 3.827751 %
+Average retransmission count: 0.387139
+Average packet delay: 10.444240 ms
+Average packet waiting exit from bufor: 10.743825 ms
+Bit rate: 30.480000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 734
+Packets received incorrectly: 22
+BER: 2.601236 %
+Max BER: 4.040404 %
+Average retransmission count: 0.430518
+Average packet delay: 10.625311 ms
+Average packet waiting exit from bufor: 10.986444 ms
+Bit rate: 29.360000 b/s
 
 
 ---- NEW SIMULATION ----
 
 Lambda: 0.01
 Total simulation time: 2500 ms
-Initial phase time: 0
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 772
+Packets received incorrectly: 20
+BER: 2.583516 %
+Max BER: 5.882353 %
+Average retransmission count: 0.389896
+Average packet delay: 7.811737 ms
+Average packet waiting exit from bufor: 7.951995 ms
+Bit rate: 30.880000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 767
+Packets received incorrectly: 23
+BER: 2.797926 %
+Max BER: 4.716981 %
+Average retransmission count: 0.376793
+Average packet delay: 2.523502 ms
+Average packet waiting exit from bufor: 2.559485 ms
+Bit rate: 30.680000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 765
+Packets received incorrectly: 19
+BER: 2.397785 %
+Max BER: 3.773585 %
+Average retransmission count: 0.422222
+Average packet delay: 5.922715 ms
+Average packet waiting exit from bufor: 6.152042 ms
+Bit rate: 30.600000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 776
+Packets received incorrectly: 15
+BER: 1.969036 %
+Max BER: 2.976190 %
+Average retransmission count: 0.390464
+Average packet delay: 6.548652 ms
+Average packet waiting exit from bufor: 6.693890 ms
+Bit rate: 31.040000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 760
+Packets received incorrectly: 21
+BER: 2.061856 %
+Max BER: 3.703704 %
+Average retransmission count: 0.373684
+Average packet delay: 6.189945 ms
+Average packet waiting exit from bufor: 6.318846 ms
+Bit rate: 30.400000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 798
+Packets received incorrectly: 24
+BER: 2.372428 %
+Max BER: 3.088803 %
+Average retransmission count: 0.338346
+Average packet delay: 8.161855 ms
+Average packet waiting exit from bufor: 8.400941 ms
+Bit rate: 31.920000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 732
+Packets received incorrectly: 31
+BER: 3.109779 %
+Max BER: 4.102564 %
+Average retransmission count: 0.434426
+Average packet delay: 7.893497 ms
+Average packet waiting exit from bufor: 8.113844 ms
+Bit rate: 29.280000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
 Packet of seed: 2
 Packets received properly: 787
-Packets received incorrectly: 21
-BER: 2.735955 %
-Max BER: 5.882353 %
-Average retransmission count: 0.391360
-Average packet delay: 7.665371 ms
-Average packet waiting exit from bufor: 7.803069 ms
+Packets received incorrectly: 20
+BER: 2.619502 %
+Max BER: 3.906250 %
+Average retransmission count: 0.358323
+Average packet delay: 8.530756 ms
+Average packet waiting exit from bufor: 8.774355 ms
 Bit rate: 31.480000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 769
+Packets received incorrectly: 23
+BER: 2.584212 %
+Max BER: 3.765690 %
+Average retransmission count: 0.388817
+Average packet delay: 9.260919 ms
+Average packet waiting exit from bufor: 9.563103 ms
+Bit rate: 30.760000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 724
+Packets received incorrectly: 24
+BER: 2.774248 %
+Max BER: 4.819277 %
+Average retransmission count: 0.424033
+Average packet delay: 8.287568 ms
+Average packet waiting exit from bufor: 8.632519 ms
+Bit rate: 28.960000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 763
+Packets received incorrectly: 21
+BER: 2.712830 %
+Max BER: 4.347826 %
+Average retransmission count: 0.373526
+Average packet delay: 9.791886 ms
+Average packet waiting exit from bufor: 10.082431 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 747
+Packets received incorrectly: 22
+BER: 2.762237 %
+Max BER: 3.684211 %
+Average retransmission count: 0.385542
+Average packet delay: 9.517076 ms
+Average packet waiting exit from bufor: 9.770087 ms
+Bit rate: 29.880000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 739
+Packets received incorrectly: 31
+BER: 3.273775 %
+Max BER: 4.712042 %
+Average retransmission count: 0.388363
+Average packet delay: 9.396744 ms
+Average packet waiting exit from bufor: 9.813219 ms
+Bit rate: 29.560000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 777
+Packets received incorrectly: 22
+BER: 2.782575 %
+Max BER: 4.040404 %
+Average retransmission count: 0.347490
+Average packet delay: 9.573197 ms
+Average packet waiting exit from bufor: 9.967802 ms
+Bit rate: 31.080000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 772
+Packets received incorrectly: 23
+BER: 2.634578 %
+Max BER: 4.444444 %
+Average retransmission count: 0.393782
+Average packet delay: 10.238036 ms
+Average packet waiting exit from bufor: 10.544921 ms
+Bit rate: 30.880000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 750
+Packets received incorrectly: 26
+BER: 2.750334 %
+Max BER: 5.909091 %
+Average retransmission count: 0.389333
+Average packet delay: 9.731244 ms
+Average packet waiting exit from bufor: 10.064852 ms
+Bit rate: 30.000000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 763
+Packets received incorrectly: 29
+BER: 3.061348 %
+Max BER: 4.687500 %
+Average retransmission count: 0.376147
+Average packet delay: 10.235969 ms
+Average packet waiting exit from bufor: 10.565299 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 756
+Packets received incorrectly: 23
+BER: 2.764906 %
+Max BER: 5.586592 %
+Average retransmission count: 0.378307
+Average packet delay: 11.017261 ms
+Average packet waiting exit from bufor: 11.190259 ms
+Bit rate: 30.240000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 757
+Packets received incorrectly: 26
+BER: 3.012533 %
+Max BER: 4.812834 %
+Average retransmission count: 0.379128
+Average packet delay: 10.445882 ms
+Average packet waiting exit from bufor: 10.846125 ms
+Bit rate: 30.280000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 768
+Packets received incorrectly: 23
+BER: 2.841763 %
+Max BER: 3.684211 %
+Average retransmission count: 0.369792
+Average packet delay: 10.294501 ms
+Average packet waiting exit from bufor: 10.585055 ms
+Bit rate: 30.720000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 764
+Packets received incorrectly: 22
+BER: 2.695348 %
+Max BER: 3.398058 %
+Average retransmission count: 0.404450
+Average packet delay: 10.813598 ms
+Average packet waiting exit from bufor: 11.187885 ms
+Bit rate: 30.560000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 744
+Packets received incorrectly: 23
+BER: 2.954666 %
+Max BER: 5.084746 %
+Average retransmission count: 0.411290
+Average packet delay: 7.120306 ms
+Average packet waiting exit from bufor: 7.294673 ms
+Bit rate: 29.760000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 763
+Packets received incorrectly: 24
+BER: 2.930532 %
+Max BER: 6.285714 %
+Average retransmission count: 0.390564
+Average packet delay: 2.024769 ms
+Average packet waiting exit from bufor: 2.043790 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 785
+Packets received incorrectly: 15
+BER: 2.128848 %
+Max BER: 4.784689 %
+Average retransmission count: 0.378344
+Average packet delay: 6.331108 ms
+Average packet waiting exit from bufor: 6.399104 ms
+Bit rate: 31.400000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 751
+Packets received incorrectly: 21
+BER: 2.332913 %
+Max BER: 5.235602 %
+Average retransmission count: 0.395473
+Average packet delay: 6.606939 ms
+Average packet waiting exit from bufor: 6.866008 ms
+Bit rate: 30.040000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 770
+Packets received incorrectly: 20
+BER: 2.285288 %
+Max BER: 4.329004 %
+Average retransmission count: 0.377922
+Average packet delay: 6.489714 ms
+Average packet waiting exit from bufor: 6.670112 ms
+Bit rate: 30.800000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 749
+Packets received incorrectly: 21
+BER: 2.456672 %
+Max BER: 3.571429 %
+Average retransmission count: 0.392523
+Average packet delay: 8.110025 ms
+Average packet waiting exit from bufor: 8.411605 ms
+Bit rate: 29.960000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 751
+Packets received incorrectly: 24
+BER: 2.595773 %
+Max BER: 4.661017 %
+Average retransmission count: 0.390146
+Average packet delay: 7.927340 ms
+Average packet waiting exit from bufor: 8.190188 ms
+Bit rate: 30.040000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 733
+Packets received incorrectly: 25
+BER: 2.816820 %
+Max BER: 4.093567 %
+Average retransmission count: 0.403820
+Average packet delay: 8.794442 ms
+Average packet waiting exit from bufor: 9.098310 ms
+Bit rate: 29.320000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 755
+Packets received incorrectly: 21
+BER: 2.740081 %
+Max BER: 5.555556 %
+Average retransmission count: 0.413245
+Average packet delay: 9.216114 ms
+Average packet waiting exit from bufor: 9.422083 ms
+Bit rate: 30.200000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 777
+Packets received incorrectly: 28
+BER: 3.013739 %
+Max BER: 5.208333 %
+Average retransmission count: 0.375804
+Average packet delay: 9.310255 ms
+Average packet waiting exit from bufor: 9.630803 ms
+Bit rate: 31.080000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 778
+Packets received incorrectly: 32
+BER: 3.319362 %
+Max BER: 5.194805 %
+Average retransmission count: 0.352185
+Average packet delay: 8.579643 ms
+Average packet waiting exit from bufor: 9.068312 ms
+Bit rate: 31.120000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 721
+Packets received incorrectly: 36
+BER: 3.899109 %
+Max BER: 6.550218 %
+Average retransmission count: 0.402219
+Average packet delay: 9.917791 ms
+Average packet waiting exit from bufor: 10.461031 ms
+Bit rate: 28.840000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 764
+Packets received incorrectly: 22
+BER: 3.204926 %
+Max BER: 5.314010 %
+Average retransmission count: 0.396597
+Average packet delay: 9.729470 ms
+Average packet waiting exit from bufor: 9.960412 ms
+Bit rate: 30.560000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 765
+Packets received incorrectly: 24
+BER: 2.957968 %
+Max BER: 5.741627 %
+Average retransmission count: 0.372549
+Average packet delay: 9.577315 ms
+Average packet waiting exit from bufor: 9.874004 ms
+Bit rate: 30.600000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 736
+Packets received incorrectly: 35
+BER: 3.645829 %
+Max BER: 6.214689 %
+Average retransmission count: 0.376359
+Average packet delay: 10.188247 ms
+Average packet waiting exit from bufor: 10.720993 ms
+Bit rate: 29.440000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 760
+Packets received incorrectly: 19
+BER: 2.950374 %
+Max BER: 4.629630 %
+Average retransmission count: 0.392105
+Average packet delay: 10.075211 ms
+Average packet waiting exit from bufor: 10.375404 ms
+Bit rate: 30.400000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 776
+Packets received incorrectly: 23
+BER: 2.810982 %
+Max BER: 4.347826 %
+Average retransmission count: 0.381443
+Average packet delay: 10.607450 ms
+Average packet waiting exit from bufor: 10.877728 ms
+Bit rate: 31.040000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 778
+Packets received incorrectly: 23
+BER: 2.773930 %
+Max BER: 3.292181 %
+Average retransmission count: 0.363753
+Average packet delay: 10.010779 ms
+Average packet waiting exit from bufor: 10.317613 ms
+Bit rate: 31.120000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 791
+Packets received incorrectly: 17
+BER: 2.296848 %
+Max BER: 2.991453 %
+Average retransmission count: 0.365360
+Average packet delay: 10.334147 ms
+Average packet waiting exit from bufor: 10.549910 ms
+Bit rate: 31.640000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 764
+Packets received incorrectly: 15
+BER: 1.924454 %
+Max BER: 3.755869 %
+Average retransmission count: 0.409686
+Average packet delay: 10.298795 ms
+Average packet waiting exit from bufor: 10.511230 ms
+Bit rate: 30.560000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 776
+Packets received incorrectly: 25
+BER: 2.373417 %
+Max BER: 4.020101 %
+Average retransmission count: 0.371134
+Average packet delay: 10.895099 ms
+Average packet waiting exit from bufor: 11.224505 ms
+Bit rate: 31.040000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 740
+Packets received incorrectly: 28
+BER: 3.627371 %
+Max BER: 6.172840 %
+Average retransmission count: 0.393243
+Average packet delay: 7.838273 ms
+Average packet waiting exit from bufor: 8.111789 ms
+Bit rate: 29.600000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 775
+Packets received incorrectly: 22
+BER: 2.701535 %
+Max BER: 4.687500 %
+Average retransmission count: 0.396129
+Average packet delay: 2.749326 ms
+Average packet waiting exit from bufor: 2.888733 ms
+Bit rate: 31.000000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 746
+Packets received incorrectly: 21
+BER: 2.552623 %
+Max BER: 4.020101 %
+Average retransmission count: 0.400804
+Average packet delay: 5.760819 ms
+Average packet waiting exit from bufor: 5.934247 ms
+Bit rate: 29.840000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 763
+Packets received incorrectly: 25
+BER: 2.829222 %
+Max BER: 5.405405 %
+Average retransmission count: 0.402359
+Average packet delay: 6.291820 ms
+Average packet waiting exit from bufor: 6.507229 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 764
+Packets received incorrectly: 26
+BER: 2.960790 %
+Max BER: 3.846154 %
+Average retransmission count: 0.362565
+Average packet delay: 6.778130 ms
+Average packet waiting exit from bufor: 6.986233 ms
+Bit rate: 30.560000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 749
+Packets received incorrectly: 22
+BER: 2.765727 %
+Max BER: 3.846154 %
+Average retransmission count: 0.428571
+Average packet delay: 8.305012 ms
+Average packet waiting exit from bufor: 8.538084 ms
+Bit rate: 29.960000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 772
+Packets received incorrectly: 23
+BER: 2.617993 %
+Max BER: 4.098361 %
+Average retransmission count: 0.389896
+Average packet delay: 7.990722 ms
+Average packet waiting exit from bufor: 8.229358 ms
+Bit rate: 30.880000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 742
+Packets received incorrectly: 32
+BER: 3.290225 %
+Max BER: 4.651163 %
+Average retransmission count: 0.386792
+Average packet delay: 8.658268 ms
+Average packet waiting exit from bufor: 9.038430 ms
+Bit rate: 29.680000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 725
+Packets received incorrectly: 34
+BER: 3.779198 %
+Max BER: 5.759162 %
+Average retransmission count: 0.416552
+Average packet delay: 9.439895 ms
+Average packet waiting exit from bufor: 9.852826 ms
+Bit rate: 29.000000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 780
+Packets received incorrectly: 21
+BER: 2.995587 %
+Max BER: 5.106383 %
+Average retransmission count: 0.360256
+Average packet delay: 8.739640 ms
+Average packet waiting exit from bufor: 8.975679 ms
+Bit rate: 31.200000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 774
+Packets received incorrectly: 24
+BER: 2.786722 %
+Max BER: 4.897959 %
+Average retransmission count: 0.375969
+Average packet delay: 9.724239 ms
+Average packet waiting exit from bufor: 9.958643 ms
+Bit rate: 30.960000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 766
+Packets received incorrectly: 29
+BER: 3.089387 %
+Max BER: 4.878049 %
+Average retransmission count: 0.357702
+Average packet delay: 9.827740 ms
+Average packet waiting exit from bufor: 10.218240 ms
+Bit rate: 30.640000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 775
+Packets received incorrectly: 20
+BER: 2.686173 %
+Max BER: 4.761905 %
+Average retransmission count: 0.381935
+Average packet delay: 9.006495 ms
+Average packet waiting exit from bufor: 9.180987 ms
+Bit rate: 31.000000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 761
+Packets received incorrectly: 24
+BER: 2.752071 %
+Max BER: 4.273504 %
+Average retransmission count: 0.369251
+Average packet delay: 9.793972 ms
+Average packet waiting exit from bufor: 10.119715 ms
+Bit rate: 30.440000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 732
+Packets received incorrectly: 21
+BER: 2.669214 %
+Max BER: 3.797468 %
+Average retransmission count: 0.394809
+Average packet delay: 10.201762 ms
+Average packet waiting exit from bufor: 10.413846 ms
+Bit rate: 29.280000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 741
+Packets received incorrectly: 33
+BER: 3.242015 %
+Max BER: 4.782609 %
+Average retransmission count: 0.383266
+Average packet delay: 10.021092 ms
+Average packet waiting exit from bufor: 10.486337 ms
+Bit rate: 29.640000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 803
+Packets received incorrectly: 21
+BER: 2.752714 %
+Max BER: 5.347594 %
+Average retransmission count: 0.349938
+Average packet delay: 10.088415 ms
+Average packet waiting exit from bufor: 10.316278 ms
+Bit rate: 32.120000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 768
+Packets received incorrectly: 20
+BER: 2.475385 %
+Max BER: 4.433498 %
+Average retransmission count: 0.371094
+Average packet delay: 10.253951 ms
+Average packet waiting exit from bufor: 10.534348 ms
+Bit rate: 30.720000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 760
+Packets received incorrectly: 23
+BER: 2.463991 %
+Max BER: 3.773585 %
+Average retransmission count: 0.368421
+Average packet delay: 10.608830 ms
+Average packet waiting exit from bufor: 10.968539 ms
+Bit rate: 30.400000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 762
+Packets received incorrectly: 19
+BER: 2.387347 %
+Max BER: 3.719008 %
+Average retransmission count: 0.375328
+Average packet delay: 10.763009 ms
+Average packet waiting exit from bufor: 10.956206 ms
+Bit rate: 30.480000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 748
+Packets received incorrectly: 23
+BER: 2.553401 %
+Max BER: 3.879310 %
+Average retransmission count: 0.394385
+Average packet delay: 10.842139 ms
+Average packet waiting exit from bufor: 11.129211 ms
+Bit rate: 29.920000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 782
+Packets received incorrectly: 22
+BER: 2.804822 %
+Max BER: 6.976744 %
+Average retransmission count: 0.375959
+Average packet delay: 7.104504 ms
+Average packet waiting exit from bufor: 7.313818 ms
+Bit rate: 31.280000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 753
+Packets received incorrectly: 19
+BER: 2.425708 %
+Max BER: 5.217391 %
+Average retransmission count: 0.426295
+Average packet delay: 1.490199 ms
+Average packet waiting exit from bufor: 1.573471 ms
+Bit rate: 30.120000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 783
+Packets received incorrectly: 24
+BER: 2.499744 %
+Max BER: 4.347826 %
+Average retransmission count: 0.353768
+Average packet delay: 6.915368 ms
+Average packet waiting exit from bufor: 7.139423 ms
+Bit rate: 31.320000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 759
+Packets received incorrectly: 22
+BER: 2.545037 %
+Max BER: 4.500000 %
+Average retransmission count: 0.421607
+Average packet delay: 6.244458 ms
+Average packet waiting exit from bufor: 6.387526 ms
+Bit rate: 30.360000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 780
+Packets received incorrectly: 16
+BER: 2.031334 %
+Max BER: 3.265306 %
+Average retransmission count: 0.365385
+Average packet delay: 7.170146 ms
+Average packet waiting exit from bufor: 7.293723 ms
+Bit rate: 31.200000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 759
+Packets received incorrectly: 17
+BER: 2.021567 %
+Max BER: 3.550296 %
+Average retransmission count: 0.407115
+Average packet delay: 7.997457 ms
+Average packet waiting exit from bufor: 8.186545 ms
+Bit rate: 30.360000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 759
+Packets received incorrectly: 19
+BER: 2.088163 %
+Max BER: 3.012048 %
+Average retransmission count: 0.430830
+Average packet delay: 7.924321 ms
+Average packet waiting exit from bufor: 8.201615 ms
+Bit rate: 30.360000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 769
+Packets received incorrectly: 24
+BER: 2.382226 %
+Max BER: 4.166667 %
+Average retransmission count: 0.353706
+Average packet delay: 8.429212 ms
+Average packet waiting exit from bufor: 8.780711 ms
+Bit rate: 30.760000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 762
+Packets received incorrectly: 22
+BER: 2.430754 %
+Max BER: 4.368932 %
+Average retransmission count: 0.395013
+Average packet delay: 8.869383 ms
+Average packet waiting exit from bufor: 9.100997 ms
+Bit rate: 30.480000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 755
+Packets received incorrectly: 28
+BER: 2.779574 %
+Max BER: 3.791469 %
+Average retransmission count: 0.397351
+Average packet delay: 9.488861 ms
+Average packet waiting exit from bufor: 9.825556 ms
+Bit rate: 30.200000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 741
+Packets received incorrectly: 29
+BER: 3.184192 %
+Max BER: 4.433498 %
+Average retransmission count: 0.385965
+Average packet delay: 8.954486 ms
+Average packet waiting exit from bufor: 9.314870 ms
+Bit rate: 29.640000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 771
+Packets received incorrectly: 23
+BER: 2.882589 %
+Max BER: 4.242424 %
+Average retransmission count: 0.367056
+Average packet delay: 9.360001 ms
+Average packet waiting exit from bufor: 9.582169 ms
+Bit rate: 30.840000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 771
+Packets received incorrectly: 16
+BER: 2.292090 %
+Max BER: 3.977273 %
+Average retransmission count: 0.390402
+Average packet delay: 10.065651 ms
+Average packet waiting exit from bufor: 10.261669 ms
+Bit rate: 30.840000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 767
+Packets received incorrectly: 20
+BER: 2.221188 %
+Max BER: 3.658537 %
+Average retransmission count: 0.391134
+Average packet delay: 9.758866 ms
+Average packet waiting exit from bufor: 10.032864 ms
+Bit rate: 30.680000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 746
+Packets received incorrectly: 20
+BER: 2.261925 %
+Max BER: 3.589744 %
+Average retransmission count: 0.406166
+Average packet delay: 10.484232 ms
+Average packet waiting exit from bufor: 10.751087 ms
+Bit rate: 29.840000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 750
+Packets received incorrectly: 18
+BER: 2.066201 %
+Max BER: 3.351955 %
+Average retransmission count: 0.393333
+Average packet delay: 10.183781 ms
+Average packet waiting exit from bufor: 10.399179 ms
+Bit rate: 30.000000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 766
+Packets received incorrectly: 27
+BER: 2.639242 %
+Max BER: 4.000000 %
+Average retransmission count: 0.378590
+Average packet delay: 10.124200 ms
+Average packet waiting exit from bufor: 10.469830 ms
+Bit rate: 30.640000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 777
+Packets received incorrectly: 21
+BER: 2.482655 %
+Max BER: 4.663212 %
+Average retransmission count: 0.364221
+Average packet delay: 10.405018 ms
+Average packet waiting exit from bufor: 10.647063 ms
+Bit rate: 31.080000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 780
+Packets received incorrectly: 23
+BER: 2.635621 %
+Max BER: 5.389222 %
+Average retransmission count: 0.346154
+Average packet delay: 10.376062 ms
+Average packet waiting exit from bufor: 10.616669 ms
+Bit rate: 31.200000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 773
+Packets received incorrectly: 18
+BER: 2.259525 %
+Max BER: 3.243243 %
+Average retransmission count: 0.369987
+Average packet delay: 10.414871 ms
+Average packet waiting exit from bufor: 10.649937 ms
+Bit rate: 30.920000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 796
+Packets received incorrectly: 18
+BER: 2.093708 %
+Max BER: 3.278689 %
+Average retransmission count: 0.325377
+Average packet delay: 10.473970 ms
+Average packet waiting exit from bufor: 10.696256 ms
+Bit rate: 31.840000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 778
+Packets received incorrectly: 19
+BER: 2.237959 %
+Max BER: 4.958678 %
+Average retransmission count: 0.380463
+Average packet delay: 7.349125 ms
+Average packet waiting exit from bufor: 7.534166 ms
+Bit rate: 31.120000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 754
+Packets received incorrectly: 24
+BER: 2.618896 %
+Max BER: 4.487179 %
+Average retransmission count: 0.413793
+Average packet delay: 2.093073 ms
+Average packet waiting exit from bufor: 2.171869 ms
+Bit rate: 30.160000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 753
+Packets received incorrectly: 21
+BER: 2.547272 %
+Max BER: 3.846154 %
+Average retransmission count: 0.395750
+Average packet delay: 6.105724 ms
+Average packet waiting exit from bufor: 6.276270 ms
+Bit rate: 30.120000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 792
+Packets received incorrectly: 20
+BER: 2.346339 %
+Max BER: 4.672897 %
+Average retransmission count: 0.367424
+Average packet delay: 6.750557 ms
+Average packet waiting exit from bufor: 7.036104 ms
+Bit rate: 31.680000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 778
+Packets received incorrectly: 21
+BER: 2.488360 %
+Max BER: 4.069767 %
+Average retransmission count: 0.389460
+Average packet delay: 6.050260 ms
+Average packet waiting exit from bufor: 6.211632 ms
+Bit rate: 31.120000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 732
+Packets received incorrectly: 31
+BER: 3.237813 %
+Max BER: 5.298013 %
+Average retransmission count: 0.386612
+Average packet delay: 8.274270 ms
+Average packet waiting exit from bufor: 8.622706 ms
+Bit rate: 29.280000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 766
+Packets received incorrectly: 20
+BER: 2.774917 %
+Max BER: 5.524862 %
+Average retransmission count: 0.377285
+Average packet delay: 8.399977 ms
+Average packet waiting exit from bufor: 8.611961 ms
+Bit rate: 30.640000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 763
+Packets received incorrectly: 31
+BER: 3.305964 %
+Max BER: 5.325444 %
+Average retransmission count: 0.355177
+Average packet delay: 8.371398 ms
+Average packet waiting exit from bufor: 8.755401 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 759
+Packets received incorrectly: 24
+BER: 3.060922 %
+Max BER: 4.255319 %
+Average retransmission count: 0.386034
+Average packet delay: 8.985619 ms
+Average packet waiting exit from bufor: 9.252619 ms
+Bit rate: 30.360000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 731
+Packets received incorrectly: 30
+BER: 3.300698 %
+Max BER: 4.694836 %
+Average retransmission count: 0.425445
+Average packet delay: 9.081892 ms
+Average packet waiting exit from bufor: 9.457082 ms
+Bit rate: 29.240000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 767
+Packets received incorrectly: 26
+BER: 3.135107 %
+Max BER: 3.773585 %
+Average retransmission count: 0.359844
+Average packet delay: 9.078137 ms
+Average packet waiting exit from bufor: 9.379450 ms
+Bit rate: 30.680000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 725
+Packets received incorrectly: 27
+BER: 3.241541 %
+Max BER: 4.424779 %
+Average retransmission count: 0.419310
+Average packet delay: 9.624199 ms
+Average packet waiting exit from bufor: 10.040117 ms
+Bit rate: 29.000000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 765
+Packets received incorrectly: 26
+BER: 3.203662 %
+Max BER: 3.723404 %
+Average retransmission count: 0.364706
+Average packet delay: 9.650010 ms
+Average packet waiting exit from bufor: 9.959378 ms
+Bit rate: 30.600000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 752
+Packets received incorrectly: 17
+BER: 2.494606 %
+Max BER: 4.716981 %
+Average retransmission count: 0.409574
+Average packet delay: 10.250891 ms
+Average packet waiting exit from bufor: 10.501120 ms
+Bit rate: 30.080000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 786
+Packets received incorrectly: 20
+BER: 2.393182 %
+Max BER: 4.395604 %
+Average retransmission count: 0.372774
+Average packet delay: 10.177972 ms
+Average packet waiting exit from bufor: 10.400237 ms
+Bit rate: 31.440000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 769
+Packets received incorrectly: 16
+BER: 2.085789 %
+Max BER: 3.783784 %
+Average retransmission count: 0.379714
+Average packet delay: 10.290866 ms
+Average packet waiting exit from bufor: 10.497523 ms
+Bit rate: 30.760000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 810
+Packets received incorrectly: 18
+BER: 1.961282 %
+Max BER: 2.590674 %
+Average retransmission count: 0.341975
+Average packet delay: 10.095180 ms
+Average packet waiting exit from bufor: 10.399160 ms
+Bit rate: 32.400000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 784
+Packets received incorrectly: 23
+BER: 2.213553 %
+Max BER: 3.636364 %
+Average retransmission count: 0.377551
+Average packet delay: 10.230128 ms
+Average packet waiting exit from bufor: 10.634394 ms
+Bit rate: 31.360000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 778
+Packets received incorrectly: 19
+BER: 2.207748 %
+Max BER: 3.539823 %
+Average retransmission count: 0.348329
+Average packet delay: 9.793540 ms
+Average packet waiting exit from bufor: 10.105837 ms
+Bit rate: 31.120000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 783
+Packets received incorrectly: 14
+BER: 1.855672 %
+Max BER: 3.286385 %
+Average retransmission count: 0.407407
+Average packet delay: 10.686387 ms
+Average packet waiting exit from bufor: 10.920883 ms
+Bit rate: 31.320000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 757
+Packets received incorrectly: 20
+BER: 2.005547 %
+Max BER: 3.286385 %
+Average retransmission count: 0.392338
+Average packet delay: 10.427894 ms
+Average packet waiting exit from bufor: 10.722753 ms
+Bit rate: 30.280000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 755
+Packets received incorrectly: 30
+BER: 4.069061 %
+Max BER: 8.860759 %
+Average retransmission count: 0.369536
+Average packet delay: 7.792302 ms
+Average packet waiting exit from bufor: 8.103921 ms
+Bit rate: 30.200000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 778
+Packets received incorrectly: 20
+BER: 2.856750 %
+Max BER: 4.000000 %
+Average retransmission count: 0.384319
+Average packet delay: 2.306058 ms
+Average packet waiting exit from bufor: 2.431634 ms
+Bit rate: 31.120000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 748
+Packets received incorrectly: 22
+BER: 2.573332 %
+Max BER: 3.896104 %
+Average retransmission count: 0.410428
+Average packet delay: 5.681654 ms
+Average packet waiting exit from bufor: 5.783354 ms
+Bit rate: 29.920000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 761
+Packets received incorrectly: 24
+BER: 2.671977 %
+Max BER: 4.216867 %
+Average retransmission count: 0.388962
+Average packet delay: 6.941175 ms
+Average packet waiting exit from bufor: 7.058104 ms
+Bit rate: 30.440000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 747
+Packets received incorrectly: 33
+BER: 3.204586 %
+Max BER: 5.714286 %
+Average retransmission count: 0.369478
+Average packet delay: 7.764458 ms
+Average packet waiting exit from bufor: 8.009052 ms
+Bit rate: 29.880000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 768
+Packets received incorrectly: 17
+BER: 2.498434 %
+Max BER: 3.765690 %
+Average retransmission count: 0.398438
+Average packet delay: 7.476220 ms
+Average packet waiting exit from bufor: 7.692521 ms
+Bit rate: 30.720000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 762
+Packets received incorrectly: 23
+BER: 2.655485 %
+Max BER: 4.000000 %
+Average retransmission count: 0.414698
+Average packet delay: 7.995299 ms
+Average packet waiting exit from bufor: 8.327516 ms
+Bit rate: 30.480000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 746
+Packets received incorrectly: 32
+BER: 3.247881 %
+Max BER: 5.142857 %
+Average retransmission count: 0.382038
+Average packet delay: 9.065999 ms
+Average packet waiting exit from bufor: 9.431345 ms
+Bit rate: 29.840000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 771
+Packets received incorrectly: 14
+BER: 2.380083 %
+Max BER: 3.883495 %
+Average retransmission count: 0.392996
+Average packet delay: 8.570174 ms
+Average packet waiting exit from bufor: 8.748968 ms
+Bit rate: 30.840000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 804
+Packets received incorrectly: 28
+BER: 2.755553 %
+Max BER: 4.000000 %
+Average retransmission count: 0.325871
+Average packet delay: 9.173144 ms
+Average packet waiting exit from bufor: 9.572302 ms
+Bit rate: 32.160000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 763
+Packets received incorrectly: 20
+BER: 2.472018 %
+Max BER: 4.128440 %
+Average retransmission count: 0.384010
+Average packet delay: 9.403193 ms
+Average packet waiting exit from bufor: 9.659231 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 755
+Packets received incorrectly: 25
+BER: 2.611490 %
+Max BER: 4.787234 %
+Average retransmission count: 0.402649
+Average packet delay: 9.973801 ms
+Average packet waiting exit from bufor: 10.277791 ms
+Bit rate: 30.200000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 745
+Packets received incorrectly: 22
+BER: 2.468018 %
+Max BER: 5.612245 %
+Average retransmission count: 0.386577
+Average packet delay: 9.068404 ms
+Average packet waiting exit from bufor: 9.403737 ms
+Bit rate: 29.800000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 787
+Packets received incorrectly: 21
+BER: 2.379105 %
+Max BER: 4.326923 %
+Average retransmission count: 0.371029
+Average packet delay: 10.099213 ms
+Average packet waiting exit from bufor: 10.341130 ms
+Bit rate: 31.480000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 741
+Packets received incorrectly: 30
+BER: 2.981788 %
+Max BER: 3.664921 %
+Average retransmission count: 0.404858
+Average packet delay: 10.120879 ms
+Average packet waiting exit from bufor: 10.565951 ms
+Bit rate: 29.640000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 771
+Packets received incorrectly: 19
+BER: 2.595867 %
+Max BER: 3.910615 %
+Average retransmission count: 0.382620
+Average packet delay: 10.117431 ms
+Average packet waiting exit from bufor: 10.429748 ms
+Bit rate: 30.840000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 760
+Packets received incorrectly: 25
+BER: 2.798920 %
+Max BER: 3.910615 %
+Average retransmission count: 0.365789
+Average packet delay: 10.172712 ms
+Average packet waiting exit from bufor: 10.480163 ms
+Bit rate: 30.400000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 768
+Packets received incorrectly: 18
+BER: 2.457046 %
+Max BER: 4.166667 %
+Average retransmission count: 0.395833
+Average packet delay: 9.863074 ms
+Average packet waiting exit from bufor: 10.132238 ms
+Bit rate: 30.720000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 783
+Packets received incorrectly: 24
+BER: 2.589245 %
+Max BER: 3.260870 %
+Average retransmission count: 0.328225
+Average packet delay: 10.529056 ms
+Average packet waiting exit from bufor: 10.934700 ms
+Bit rate: 31.320000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 743
+Packets received incorrectly: 29
+BER: 3.054432 %
+Max BER: 4.385965 %
+Average retransmission count: 0.418573
+Average packet delay: 10.625460 ms
+Average packet waiting exit from bufor: 10.977179 ms
+Bit rate: 29.720000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 759
+Packets received incorrectly: 28
+BER: 3.343028 %
+Max BER: 4.109589 %
+Average retransmission count: 0.362319
+Average packet delay: 10.838495 ms
+Average packet waiting exit from bufor: 11.220129 ms
+Bit rate: 30.360000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 768
+Packets received incorrectly: 17
+BER: 2.181604 %
+Max BER: 4.545455 %
+Average retransmission count: 0.391927
+Average packet delay: 7.465926 ms
+Average packet waiting exit from bufor: 7.663361 ms
+Bit rate: 30.720000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 772
+Packets received incorrectly: 22
+BER: 2.532286 %
+Max BER: 3.968254 %
+Average retransmission count: 0.366580
+Average packet delay: 1.672469 ms
+Average packet waiting exit from bufor: 1.713775 ms
+Bit rate: 30.880000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 748
+Packets received incorrectly: 25
+BER: 2.890775 %
+Max BER: 4.705882 %
+Average retransmission count: 0.418449
+Average packet delay: 6.632170 ms
+Average packet waiting exit from bufor: 6.869940 ms
+Bit rate: 29.920000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 760
+Packets received incorrectly: 24
+BER: 2.891167 %
+Max BER: 3.821656 %
+Average retransmission count: 0.376316
+Average packet delay: 5.892326 ms
+Average packet waiting exit from bufor: 6.134728 ms
+Bit rate: 30.400000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 740
+Packets received incorrectly: 28
+BER: 3.219189 %
+Max BER: 4.705882 %
+Average retransmission count: 0.390541
+Average packet delay: 6.353389 ms
+Average packet waiting exit from bufor: 6.636047 ms
+Bit rate: 29.600000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 763
+Packets received incorrectly: 30
+BER: 3.368132 %
+Max BER: 4.278075 %
+Average retransmission count: 0.365662
+Average packet delay: 8.631704 ms
+Average packet waiting exit from bufor: 9.026678 ms
+Bit rate: 30.520000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 744
+Packets received incorrectly: 23
+BER: 2.999039 %
+Max BER: 4.115226 %
+Average retransmission count: 0.401882
+Average packet delay: 7.866651 ms
+Average packet waiting exit from bufor: 8.129653 ms
+Bit rate: 29.760000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 749
+Packets received incorrectly: 24
+BER: 2.918388 %
+Max BER: 4.471545 %
+Average retransmission count: 0.369826
+Average packet delay: 8.387854 ms
+Average packet waiting exit from bufor: 8.620527 ms
+Bit rate: 29.960000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 787
+Packets received incorrectly: 22
+BER: 2.693188 %
+Max BER: 4.142012 %
+Average retransmission count: 0.392630
+Average packet delay: 8.866179 ms
+Average packet waiting exit from bufor: 9.135498 ms
+Bit rate: 31.480000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 771
+Packets received incorrectly: 18
+BER: 2.325288 %
+Max BER: 3.846154 %
+Average retransmission count: 0.387808
+Average packet delay: 8.783769 ms
+Average packet waiting exit from bufor: 9.004139 ms
+Bit rate: 30.840000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 761
+Packets received incorrectly: 22
+BER: 2.475552 %
+Max BER: 3.932584 %
+Average retransmission count: 0.408673
+Average packet delay: 9.633733 ms
+Average packet waiting exit from bufor: 9.915399 ms
+Bit rate: 30.440000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 761
+Packets received incorrectly: 34
+BER: 3.266841 %
+Max BER: 4.838710 %
+Average retransmission count: 0.356110
+Average packet delay: 8.965476 ms
+Average packet waiting exit from bufor: 9.420955 ms
+Bit rate: 30.440000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 745
+Packets received incorrectly: 38
+BER: 4.050749 %
+Max BER: 5.882353 %
+Average retransmission count: 0.367785
+Average packet delay: 9.212246 ms
+Average packet waiting exit from bufor: 9.800258 ms
+Bit rate: 29.800000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 736
+Packets received incorrectly: 26
+BER: 3.590586 %
+Max BER: 5.418719 %
+Average retransmission count: 0.423913
+Average packet delay: 10.123458 ms
+Average packet waiting exit from bufor: 10.473982 ms
+Bit rate: 29.440000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 735
+Packets received incorrectly: 27
+BER: 3.427757 %
+Max BER: 4.878049 %
+Average retransmission count: 0.394558
+Average packet delay: 9.998227 ms
+Average packet waiting exit from bufor: 10.349959 ms
+Bit rate: 29.400000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 758
+Packets received incorrectly: 18
+BER: 2.696892 %
+Max BER: 3.827751 %
+Average retransmission count: 0.385224
+Average packet delay: 9.504757 ms
+Average packet waiting exit from bufor: 9.702178 ms
+Bit rate: 30.320000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 741
+Packets received incorrectly: 31
+BER: 3.346522 %
+Max BER: 5.625000 %
+Average retransmission count: 0.395412
+Average packet delay: 10.776108 ms
+Average packet waiting exit from bufor: 11.268351 ms
+Bit rate: 29.640000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 773
+Packets received incorrectly: 28
+BER: 3.290769 %
+Max BER: 4.587156 %
+Average retransmission count: 0.377749
+Average packet delay: 10.115875 ms
+Average packet waiting exit from bufor: 10.508023 ms
+Bit rate: 30.920000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 745
+Packets received incorrectly: 31
+BER: 3.585439 %
+Max BER: 4.819277 %
+Average retransmission count: 0.405369
+Average packet delay: 10.137988 ms
+Average packet waiting exit from bufor: 10.638263 ms
+Bit rate: 29.800000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 770
+Packets received incorrectly: 13
+BER: 2.458934 %
+Max BER: 3.883495 %
+Average retransmission count: 0.394805
+Average packet delay: 10.774669 ms
+Average packet waiting exit from bufor: 10.949201 ms
+Bit rate: 30.800000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 760
+Packets received incorrectly: 25
+BER: 2.762112 %
+Max BER: 4.716981 %
+Average retransmission count: 0.363158
+Average packet delay: 10.009384 ms
+Average packet waiting exit from bufor: 10.373083 ms
+Bit rate: 30.400000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 776
+Packets received incorrectly: 28
+BER: 3.581273 %
+Max BER: 5.555556 %
+Average retransmission count: 0.329897
+Average packet delay: 7.542399 ms
+Average packet waiting exit from bufor: 7.769433 ms
+Bit rate: 31.040000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 774
+Packets received incorrectly: 32
+BER: 3.655293 %
+Max BER: 6.474820 %
+Average retransmission count: 0.359173
+Average packet delay: 2.005208 ms
+Average packet waiting exit from bufor: 2.094547 ms
+Bit rate: 30.960000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 767
+Packets received incorrectly: 17
+BER: 2.613246 %
+Max BER: 4.195804 %
+Average retransmission count: 0.383312
+Average packet delay: 6.566711 ms
+Average packet waiting exit from bufor: 6.684379 ms
+Bit rate: 30.680000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 741
+Packets received incorrectly: 24
+BER: 2.772280 %
+Max BER: 4.395604 %
+Average retransmission count: 0.417004
+Average packet delay: 7.059842 ms
+Average packet waiting exit from bufor: 7.250274 ms
+Bit rate: 29.640000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 749
+Packets received incorrectly: 26
+BER: 2.987708 %
+Max BER: 5.022831 %
+Average retransmission count: 0.384513
+Average packet delay: 6.575012 ms
+Average packet waiting exit from bufor: 6.877840 ms
+Bit rate: 29.960000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 761
+Packets received incorrectly: 24
+BER: 2.863252 %
+Max BER: 3.879310 %
+Average retransmission count: 0.388962
+Average packet delay: 7.936469 ms
+Average packet waiting exit from bufor: 8.142557 ms
+Bit rate: 30.440000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 766
+Packets received incorrectly: 15
+BER: 2.188755 %
+Max BER: 3.703704 %
+Average retransmission count: 0.403394
+Average packet delay: 8.023683 ms
+Average packet waiting exit from bufor: 8.197787 ms
+Bit rate: 30.640000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 796
+Packets received incorrectly: 20
+BER: 2.162701 %
+Max BER: 3.137255 %
+Average retransmission count: 0.355528
+Average packet delay: 8.271520 ms
+Average packet waiting exit from bufor: 8.521263 ms
+Bit rate: 31.840000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 767
+Packets received incorrectly: 24
+BER: 2.510880 %
+Max BER: 3.703704 %
+Average retransmission count: 0.361147
+Average packet delay: 8.689181 ms
+Average packet waiting exit from bufor: 9.008066 ms
+Bit rate: 30.680000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 765
+Packets received incorrectly: 21
+BER: 2.549263 %
+Max BER: 3.428571 %
+Average retransmission count: 0.369935
+Average packet delay: 8.614167 ms
+Average packet waiting exit from bufor: 8.868548 ms
+Bit rate: 30.600000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 772
+Packets received incorrectly: 20
+BER: 2.371643 %
+Max BER: 3.984064 %
+Average retransmission count: 0.386010
+Average packet delay: 9.532644 ms
+Average packet waiting exit from bufor: 9.809009 ms
+Bit rate: 30.880000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 764
+Packets received incorrectly: 24
+BER: 2.652235 %
+Max BER: 4.347826 %
+Average retransmission count: 0.373037
+Average packet delay: 9.350399 ms
+Average packet waiting exit from bufor: 9.685983 ms
+Bit rate: 30.560000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 767
+Packets received incorrectly: 23
+BER: 2.659470 %
+Max BER: 4.830918 %
+Average retransmission count: 0.376793
+Average packet delay: 9.725855 ms
+Average packet waiting exit from bufor: 9.900357 ms
+Bit rate: 30.680000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 726
+Packets received incorrectly: 37
+BER: 3.719392 %
+Max BER: 4.500000 %
+Average retransmission count: 0.360882
+Average packet delay: 9.527857 ms
+Average packet waiting exit from bufor: 9.966269 ms
+Bit rate: 29.040000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 775
+Packets received incorrectly: 20
+BER: 2.963487 %
+Max BER: 3.867403 %
+Average retransmission count: 0.387097
+Average packet delay: 9.869252 ms
+Average packet waiting exit from bufor: 10.090839 ms
+Bit rate: 31.000000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 762
+Packets received incorrectly: 14
+BER: 2.322158 %
+Max BER: 3.703704 %
+Average retransmission count: 0.395013
+Average packet delay: 9.746575 ms
+Average packet waiting exit from bufor: 9.979358 ms
+Bit rate: 30.480000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 735
+Packets received incorrectly: 28
+BER: 2.903565 %
+Max BER: 4.761905 %
+Average retransmission count: 0.408163
+Average packet delay: 10.816344 ms
+Average packet waiting exit from bufor: 11.114419 ms
+Bit rate: 29.400000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 780
+Packets received incorrectly: 22
+BER: 2.678040 %
+Max BER: 3.783784 %
+Average retransmission count: 0.346154
+Average packet delay: 10.203138 ms
+Average packet waiting exit from bufor: 10.511510 ms
+Bit rate: 31.200000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 782
+Packets received incorrectly: 22
+BER: 2.699346 %
+Max BER: 4.395604 %
+Average retransmission count: 0.368286
+Average packet delay: 10.401212 ms
+Average packet waiting exit from bufor: 10.730692 ms
+Bit rate: 31.280000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 761
+Packets received incorrectly: 20
+BER: 2.524215 %
+Max BER: 4.469274 %
+Average retransmission count: 0.386334
+Average packet delay: 10.866376 ms
+Average packet waiting exit from bufor: 11.116501 ms
+Bit rate: 30.440000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 764
+Packets received incorrectly: 32
+BER: 3.139589 %
+Max BER: 4.907975 %
+Average retransmission count: 0.366492
+Average packet delay: 10.405941 ms
+Average packet waiting exit from bufor: 10.794442 ms
+Bit rate: 30.560000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.01
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 786
+Packets received incorrectly: 16
+BER: 1.943328 %
+Max BER: 3.508772 %
+Average retransmission count: 0.368957
+Average packet delay: 7.355216 ms
+Average packet waiting exit from bufor: 7.464678 ms
+Bit rate: 31.440000 b/s
+
+Lambda: 0.012
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 774
+Packets received incorrectly: 20
+BER: 2.225280 %
+Max BER: 3.870968 %
+Average retransmission count: 0.408269
+Average packet delay: 2.926441 ms
+Average packet waiting exit from bufor: 2.948610 ms
+Bit rate: 30.960000 b/s
+
+Lambda: 0.014
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 760
+Packets received incorrectly: 19
+BER: 2.167526 %
+Max BER: 3.614458 %
+Average retransmission count: 0.380263
+Average packet delay: 6.470693 ms
+Average packet waiting exit from bufor: 6.644424 ms
+Bit rate: 30.400000 b/s
+
+Lambda: 0.016
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 737
+Packets received incorrectly: 27
+BER: 2.776348 %
+Max BER: 5.286344 %
+Average retransmission count: 0.416554
+Average packet delay: 6.076425 ms
+Average packet waiting exit from bufor: 6.417518 ms
+Bit rate: 29.480000 b/s
+
+Lambda: 0.018
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 747
+Packets received incorrectly: 22
+BER: 2.783837 %
+Max BER: 5.504587 %
+Average retransmission count: 0.404284
+Average packet delay: 6.501414 ms
+Average packet waiting exit from bufor: 6.741987 ms
+Bit rate: 29.880000 b/s
+
+Lambda: 0.02
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 770
+Packets received incorrectly: 27
+BER: 3.015756 %
+Max BER: 4.918033 %
+Average retransmission count: 0.384416
+Average packet delay: 7.907601 ms
+Average packet waiting exit from bufor: 8.200560 ms
+Bit rate: 30.800000 b/s
+
+Lambda: 0.022
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 751
+Packets received incorrectly: 23
+BER: 2.768377 %
+Max BER: 4.583333 %
+Average retransmission count: 0.407457
+Average packet delay: 7.665184 ms
+Average packet waiting exit from bufor: 7.847073 ms
+Bit rate: 30.040000 b/s
+
+Lambda: 0.024
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 754
+Packets received incorrectly: 21
+BER: 2.523066 %
+Max BER: 4.621849 %
+Average retransmission count: 0.391247
+Average packet delay: 9.164086 ms
+Average packet waiting exit from bufor: 9.430276 ms
+Bit rate: 30.160000 b/s
+
+Lambda: 0.026
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 778
+Packets received incorrectly: 17
+BER: 2.121434 %
+Max BER: 3.211009 %
+Average retransmission count: 0.365039
+Average packet delay: 9.126844 ms
+Average packet waiting exit from bufor: 9.258113 ms
+Bit rate: 31.120000 b/s
+
+Lambda: 0.028
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 781
+Packets received incorrectly: 19
+BER: 2.135557 %
+Max BER: 3.535354 %
+Average retransmission count: 0.385403
+Average packet delay: 8.911767 ms
+Average packet waiting exit from bufor: 9.129908 ms
+Bit rate: 31.240000 b/s
+
+Lambda: 0.03
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 770
+Packets received incorrectly: 19
+BER: 2.128458 %
+Max BER: 3.902439 %
+Average retransmission count: 0.396104
+Average packet delay: 9.035660 ms
+Average packet waiting exit from bufor: 9.209608 ms
+Bit rate: 30.800000 b/s
+
+Lambda: 0.032
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 797
+Packets received incorrectly: 24
+BER: 2.312345 %
+Max BER: 3.308824 %
+Average retransmission count: 0.345044
+Average packet delay: 9.757053 ms
+Average packet waiting exit from bufor: 10.028439 ms
+Bit rate: 31.880000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 787
+Packets received incorrectly: 20
+BER: 2.281004 %
+Max BER: 3.980100 %
+Average retransmission count: 0.372300
+Average packet delay: 9.823047 ms
+Average packet waiting exit from bufor: 10.077708 ms
+Bit rate: 31.480000 b/s
+
+Lambda: 0.036
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 784
+Packets received incorrectly: 20
+BER: 2.244346 %
+Max BER: 4.102564 %
+Average retransmission count: 0.335459
+Average packet delay: 9.934115 ms
+Average packet waiting exit from bufor: 10.164878 ms
+Bit rate: 31.360000 b/s
+
+Lambda: 0.038
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 732
+Packets received incorrectly: 28
+BER: 2.714283 %
+Max BER: 5.098039 %
+Average retransmission count: 0.418033
+Average packet delay: 9.950413 ms
+Average packet waiting exit from bufor: 10.288238 ms
+Bit rate: 29.280000 b/s
+
+Lambda: 0.04
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 768
+Packets received incorrectly: 22
+BER: 2.633158 %
+Max BER: 4.046243 %
+Average retransmission count: 0.385417
+Average packet delay: 10.495549 ms
+Average packet waiting exit from bufor: 10.720259 ms
+Bit rate: 30.720000 b/s
+
+Lambda: 0.042
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 772
+Packets received incorrectly: 27
+BER: 2.869567 %
+Max BER: 3.846154 %
+Average retransmission count: 0.358808
+Average packet delay: 9.759560 ms
+Average packet waiting exit from bufor: 10.085032 ms
+Bit rate: 30.880000 b/s
+
+Lambda: 0.044
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 728
+Packets received incorrectly: 35
+BER: 3.674462 %
+Max BER: 5.208333 %
+Average retransmission count: 0.379121
+Average packet delay: 10.782018 ms
+Average packet waiting exit from bufor: 11.249224 ms
+Bit rate: 29.120000 b/s
+
+Lambda: 0.046
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 753
+Packets received incorrectly: 26
+BER: 3.410290 %
+Max BER: 5.213270 %
+Average retransmission count: 0.367862
+Average packet delay: 10.451489 ms
+Average packet waiting exit from bufor: 10.766704 ms
+Bit rate: 30.120000 b/s
+
+Lambda: 0.048
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 748
+Packets received incorrectly: 27
+BER: 3.224739 %
+Max BER: 4.621849 %
+Average retransmission count: 0.367647
+Average packet delay: 10.580529 ms
+Average packet waiting exit from bufor: 10.982301 ms
+Bit rate: 29.920000 b/s
+
+Lambda: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 774
+Packets received incorrectly: 28
+BER: 3.159430 %
+Max BER: 5.670103 %
+Average retransmission count: 0.352713
+Average packet delay: 10.335629 ms
+Average packet waiting exit from bufor: 10.859552 ms
+Bit rate: 30.960000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 758
+Packets received incorrectly: 17
+BER: 2.205085 %
+Max BER: 4.301075 %
+Average retransmission count: 0.436675
+Average packet delay: 11.400255 ms
+Average packet waiting exit from bufor: 11.653823 ms
+Bit rate: 30.320000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 763
+Packets received incorrectly: 24
+BER: 3.067721 %
+Max BER: 6.603774 %
+Average retransmission count: 0.385321
+Average packet delay: 11.416370 ms
+Average packet waiting exit from bufor: 11.778927 ms
+Bit rate: 30.520000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 3
+Packets received properly: 752
+Packets received incorrectly: 23
+BER: 3.003358 %
+Max BER: 5.454545 %
+Average retransmission count: 0.410904
+Average packet delay: 10.998517 ms
+Average packet waiting exit from bufor: 11.293338 ms
+Bit rate: 30.080000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 4
+Packets received properly: 739
+Packets received incorrectly: 30
+BER: 3.931159 %
+Max BER: 6.451613 %
+Average retransmission count: 0.392422
+Average packet delay: 11.395357 ms
+Average packet waiting exit from bufor: 11.858907 ms
+Bit rate: 29.560000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 5
+Packets received properly: 789
+Packets received incorrectly: 23
+BER: 3.016489 %
+Max BER: 9.589041 %
+Average retransmission count: 0.362484
+Average packet delay: 11.230237 ms
+Average packet waiting exit from bufor: 11.557288 ms
+Bit rate: 31.560000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 6
+Packets received properly: 784
+Packets received incorrectly: 19
+BER: 2.316296 %
+Max BER: 5.217391 %
+Average retransmission count: 0.377551
+Average packet delay: 11.154231 ms
+Average packet waiting exit from bufor: 11.468099 ms
+Bit rate: 31.360000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 7
+Packets received properly: 746
+Packets received incorrectly: 30
+BER: 4.172475 %
+Max BER: 9.230769 %
+Average retransmission count: 0.376676
+Average packet delay: 11.415366 ms
+Average packet waiting exit from bufor: 11.883524 ms
+Bit rate: 29.840000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 8
+Packets received properly: 791
+Packets received incorrectly: 16
+BER: 2.008346 %
+Max BER: 4.597701 %
+Average retransmission count: 0.378003
+Average packet delay: 11.003534 ms
+Average packet waiting exit from bufor: 11.259641 ms
+Bit rate: 31.640000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 9
+Packets received properly: 769
+Packets received incorrectly: 32
+BER: 4.091455 %
+Max BER: 6.250000 %
+Average retransmission count: 0.335501
+Average packet delay: 11.413888 ms
+Average packet waiting exit from bufor: 11.806163 ms
+Bit rate: 30.760000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 10
+Packets received properly: 776
+Packets received incorrectly: 20
+BER: 2.471677 %
+Max BER: 4.597701 %
+Average retransmission count: 0.368557
+Average packet delay: 11.050223 ms
+Average packet waiting exit from bufor: 11.336137 ms
+Bit rate: 31.040000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 1075
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.049302
+Average packet delay: 10.793282 ms
+Average packet waiting exit from bufor: 10.774526 ms
+Bit rate: 43.000000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 1007
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.109235
+Average packet delay: 6.905807 ms
+Average packet waiting exit from bufor: 6.906507 ms
+Bit rate: 40.280000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 986
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.152130
+Average packet delay: 3.159678 ms
+Average packet waiting exit from bufor: 3.139172 ms
+Bit rate: 39.440000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 884
+Packets received incorrectly: 9
+BER: 0.535635 %
+Max BER: 1.604278 %
+Average retransmission count: 0.225113
+Average packet delay: 2.477672 ms
+Average packet waiting exit from bufor: 2.515829 ms
+Bit rate: 35.360000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 875
+Packets received incorrectly: 9
+BER: 0.667433 %
+Max BER: 1.315789 %
+Average retransmission count: 0.260571
+Average packet delay: 9.248994 ms
+Average packet waiting exit from bufor: 9.299718 ms
+Bit rate: 35.000000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 822
+Packets received incorrectly: 13
+BER: 0.972375 %
+Max BER: 1.673640 %
+Average retransmission count: 0.330900
+Average packet delay: 8.091213 ms
+Average packet waiting exit from bufor: 8.196629 ms
+Bit rate: 32.880000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 746
+Packets received incorrectly: 16
+BER: 1.350127 %
+Max BER: 2.380952 %
+Average retransmission count: 0.403485
+Average packet delay: 6.789914 ms
+Average packet waiting exit from bufor: 6.912936 ms
+Bit rate: 29.840000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 729
+Packets received incorrectly: 30
+BER: 2.503612 %
+Max BER: 3.463203 %
+Average retransmission count: 0.437586
+Average packet delay: 8.797499 ms
+Average packet waiting exit from bufor: 9.192366 ms
+Bit rate: 29.160000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 627
+Packets received incorrectly: 60
+BER: 5.436484 %
+Max BER: 8.208955 %
+Average retransmission count: 0.476874
+Average packet delay: 9.450663 ms
+Average packet waiting exit from bufor: 10.487962 ms
+Bit rate: 25.080000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 582
+Packets received incorrectly: 66
+BER: 7.685380 %
+Max BER: 9.947644 %
+Average retransmission count: 0.596220
+Average packet delay: 9.427729 ms
+Average packet waiting exit from bufor: 10.423351 ms
+Bit rate: 23.280000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 560
+Packets received incorrectly: 85
+BER: 10.825151 %
+Max BER: 15.328467 %
+Average retransmission count: 0.603571
+Average packet delay: 10.304614 ms
+Average packet waiting exit from bufor: 11.754793 ms
+Bit rate: 22.400000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 488
+Packets received incorrectly: 95
+BER: 14.390339 %
+Max BER: 16.800000 %
+Average retransmission count: 0.670082
+Average packet delay: 9.666463 ms
+Average packet waiting exit from bufor: 11.702207 ms
+Bit rate: 19.520000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 451
+Packets received incorrectly: 124
+BER: 19.669737 %
+Max BER: 23.275862 %
+Average retransmission count: 0.662971
+Average packet delay: 10.485836 ms
+Average packet waiting exit from bufor: 13.356197 ms
+Bit rate: 18.040000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 388
+Packets received incorrectly: 145
+BER: 26.861170 %
+Max BER: 34.313725 %
+Average retransmission count: 0.832474
+Average packet delay: 10.820052 ms
+Average packet waiting exit from bufor: 14.607472 ms
+Bit rate: 15.520000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 306
+Packets received incorrectly: 196
+BER: 41.063978 %
+Max BER: 48.809524 %
+Average retransmission count: 0.764706
+Average packet delay: 11.410261 ms
+Average packet waiting exit from bufor: 18.552905 ms
+Bit rate: 12.240000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 284
+Packets received incorrectly: 198
+BER: 52.641459 %
+Max BER: 75.609756 %
+Average retransmission count: 0.873239
+Average packet delay: 10.548391 ms
+Average packet waiting exit from bufor: 18.474739 ms
+Bit rate: 11.360000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 224
+Packets received incorrectly: 222
+BER: 70.183869 %
+Max BER: 102.857143 %
+Average retransmission count: 0.964286
+Average packet delay: 11.880482 ms
+Average packet waiting exit from bufor: 22.665022 ms
+Bit rate: 8.960000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 168
+Packets received incorrectly: 268
+BER: 102.347992 %
+Max BER: 130.508475 %
+Average retransmission count: 0.880952
+Average packet delay: 11.249613 ms
+Average packet waiting exit from bufor: 28.553190 ms
+Bit rate: 6.720000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 118
+Packets received incorrectly: 309
+BER: 156.848204 %
+Max BER: 183.333333 %
+Average retransmission count: 0.847458
+Average packet delay: 11.192890 ms
+Average packet waiting exit from bufor: 41.285644 ms
+Bit rate: 4.720000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 55
+Packets received incorrectly: 334
+BER: 272.287757 %
+Max BER: 355.555556 %
+Average retransmission count: 0.945455
+Average packet delay: 9.897509 ms
+Average packet waiting exit from bufor: 80.855745 ms
+Bit rate: 2.200000 b/s
+
+Lambda: 0.034
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 0
+Packets received incorrectly: 381
+BER: 625.124199 %
+Max BER: 807.692308 %
+Average retransmission count: 0
+Average packet delay: 0 ms
+Average packet waiting exit from bufor: 0 ms
+Bit rate: 0.000000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+TER: 0
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 1075
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.049302
+Average packet delay: 10.793282 ms
+Average packet waiting exit from bufor: 10.774526 ms
+Bit rate: 43.000000 b/s
+
+Lambda: 0.034
+TER: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 1007
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.109235
+Average packet delay: 6.905807 ms
+Average packet waiting exit from bufor: 6.906507 ms
+Bit rate: 40.280000 b/s
+
+Lambda: 0.034
+TER: 0.1
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 986
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.152130
+Average packet delay: 3.159678 ms
+Average packet waiting exit from bufor: 3.139172 ms
+Bit rate: 39.440000 b/s
+
+Lambda: 0.034
+TER: 0.15
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 884
+Packets received incorrectly: 9
+BER: 0.535635 %
+Max BER: 1.604278 %
+Average retransmission count: 0.225113
+Average packet delay: 2.477672 ms
+Average packet waiting exit from bufor: 2.515829 ms
+Bit rate: 35.360000 b/s
+
+Lambda: 0.034
+TER: 0.2
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 875
+Packets received incorrectly: 9
+BER: 0.667433 %
+Max BER: 1.315789 %
+Average retransmission count: 0.260571
+Average packet delay: 9.248994 ms
+Average packet waiting exit from bufor: 9.299718 ms
+Bit rate: 35.000000 b/s
+
+Lambda: 0.034
+TER: 0.25
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 822
+Packets received incorrectly: 13
+BER: 0.972375 %
+Max BER: 1.673640 %
+Average retransmission count: 0.330900
+Average packet delay: 8.091213 ms
+Average packet waiting exit from bufor: 8.196629 ms
+Bit rate: 32.880000 b/s
+
+Lambda: 0.034
+TER: 0.3
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 746
+Packets received incorrectly: 16
+BER: 1.350127 %
+Max BER: 2.380952 %
+Average retransmission count: 0.403485
+Average packet delay: 6.789914 ms
+Average packet waiting exit from bufor: 6.912936 ms
+Bit rate: 29.840000 b/s
+
+Lambda: 0.034
+TER: 0.35
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 729
+Packets received incorrectly: 30
+BER: 2.503612 %
+Max BER: 3.463203 %
+Average retransmission count: 0.437586
+Average packet delay: 8.797499 ms
+Average packet waiting exit from bufor: 9.192366 ms
+Bit rate: 29.160000 b/s
+
+Lambda: 0.034
+TER: 0.4
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 627
+Packets received incorrectly: 60
+BER: 5.436484 %
+Max BER: 8.208955 %
+Average retransmission count: 0.476874
+Average packet delay: 9.450663 ms
+Average packet waiting exit from bufor: 10.487962 ms
+Bit rate: 25.080000 b/s
+
+Lambda: 0.034
+TER: 0.45
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 582
+Packets received incorrectly: 66
+BER: 7.685380 %
+Max BER: 9.947644 %
+Average retransmission count: 0.596220
+Average packet delay: 9.427729 ms
+Average packet waiting exit from bufor: 10.423351 ms
+Bit rate: 23.280000 b/s
+
+Lambda: 0.034
+TER: 0.5
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 560
+Packets received incorrectly: 85
+BER: 10.825151 %
+Max BER: 15.328467 %
+Average retransmission count: 0.603571
+Average packet delay: 10.304614 ms
+Average packet waiting exit from bufor: 11.754793 ms
+Bit rate: 22.400000 b/s
+
+Lambda: 0.034
+TER: 0.55
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 488
+Packets received incorrectly: 95
+BER: 14.390339 %
+Max BER: 16.800000 %
+Average retransmission count: 0.670082
+Average packet delay: 9.666463 ms
+Average packet waiting exit from bufor: 11.702207 ms
+Bit rate: 19.520000 b/s
+
+Lambda: 0.034
+TER: 0.6
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 451
+Packets received incorrectly: 124
+BER: 19.669737 %
+Max BER: 23.275862 %
+Average retransmission count: 0.662971
+Average packet delay: 10.485836 ms
+Average packet waiting exit from bufor: 13.356197 ms
+Bit rate: 18.040000 b/s
+
+Lambda: 0.034
+TER: 0.65
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 388
+Packets received incorrectly: 145
+BER: 26.861170 %
+Max BER: 34.313725 %
+Average retransmission count: 0.832474
+Average packet delay: 10.820052 ms
+Average packet waiting exit from bufor: 14.607472 ms
+Bit rate: 15.520000 b/s
+
+Lambda: 0.034
+TER: 0.7
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 306
+Packets received incorrectly: 196
+BER: 41.063978 %
+Max BER: 48.809524 %
+Average retransmission count: 0.764706
+Average packet delay: 11.410261 ms
+Average packet waiting exit from bufor: 18.552905 ms
+Bit rate: 12.240000 b/s
+
+Lambda: 0.034
+TER: 0.75
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 284
+Packets received incorrectly: 198
+BER: 52.641459 %
+Max BER: 75.609756 %
+Average retransmission count: 0.873239
+Average packet delay: 10.548391 ms
+Average packet waiting exit from bufor: 18.474739 ms
+Bit rate: 11.360000 b/s
+
+Lambda: 0.034
+TER: 0.8
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 224
+Packets received incorrectly: 222
+BER: 70.183869 %
+Max BER: 102.857143 %
+Average retransmission count: 0.964286
+Average packet delay: 11.880482 ms
+Average packet waiting exit from bufor: 22.665022 ms
+Bit rate: 8.960000 b/s
+
+Lambda: 0.034
+TER: 0.85
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 168
+Packets received incorrectly: 268
+BER: 102.347992 %
+Max BER: 130.508475 %
+Average retransmission count: 0.880952
+Average packet delay: 11.249613 ms
+Average packet waiting exit from bufor: 28.553190 ms
+Bit rate: 6.720000 b/s
+
+Lambda: 0.034
+TER: 0.9
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 118
+Packets received incorrectly: 309
+BER: 156.848204 %
+Max BER: 183.333333 %
+Average retransmission count: 0.847458
+Average packet delay: 11.192890 ms
+Average packet waiting exit from bufor: 41.285644 ms
+Bit rate: 4.720000 b/s
+
+Lambda: 0.034
+TER: 0.95
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 55
+Packets received incorrectly: 334
+BER: 272.287757 %
+Max BER: 355.555556 %
+Average retransmission count: 0.945455
+Average packet delay: 9.897509 ms
+Average packet waiting exit from bufor: 80.855745 ms
+Bit rate: 2.200000 b/s
+
+Lambda: 0.034
+TER: 1
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 1
+Packets received properly: 0
+Packets received incorrectly: 381
+BER: 625.124199 %
+Max BER: 807.692308 %
+Average retransmission count: 0
+Average packet delay: 0 ms
+Average packet waiting exit from bufor: 0 ms
+Bit rate: 0.000000 b/s
+
+
+---- NEW SIMULATION ----
+
+Lambda: 0.034
+TER: 0
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 1067
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.047798
+Average packet delay: 10.799189 ms
+Average packet waiting exit from bufor: 10.800396 ms
+Bit rate: 42.680000 b/s
+
+Lambda: 0.034
+TER: 0.05
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 1010
+Packets received incorrectly: 0
+BER: 0.000000 %
+Max BER: 0.000000 %
+Average retransmission count: 0.115842
+Average packet delay: 6.970667 ms
+Average packet waiting exit from bufor: 6.969880 ms
+Bit rate: 40.400000 b/s
+
+Lambda: 0.034
+TER: 0.1
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 988
+Packets received incorrectly: 2
+BER: 0.111079 %
+Max BER: 0.526316 %
+Average retransmission count: 0.138664
+Average packet delay: 3.439234 ms
+Average packet waiting exit from bufor: 3.422927 ms
+Bit rate: 39.520000 b/s
+
+Lambda: 0.034
+TER: 0.15
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 928
+Packets received incorrectly: 3
+BER: 0.177254 %
+Max BER: 0.518135 %
+Average retransmission count: 0.202586
+Average packet delay: 3.211456 ms
+Average packet waiting exit from bufor: 3.216497 ms
+Bit rate: 37.120000 b/s
+
+Lambda: 0.034
+TER: 0.2
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 882
+Packets received incorrectly: 7
+BER: 0.383100 %
+Max BER: 1.826484 %
+Average retransmission count: 0.265306
+Average packet delay: 8.401437 ms
+Average packet waiting exit from bufor: 8.406932 ms
+Bit rate: 35.280000 b/s
+
+Lambda: 0.034
+TER: 0.25
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 847
+Packets received incorrectly: 13
+BER: 0.902147 %
+Max BER: 2.008032 %
+Average retransmission count: 0.295159
+Average packet delay: 7.554699 ms
+Average packet waiting exit from bufor: 7.697787 ms
+Bit rate: 33.880000 b/s
+
+Lambda: 0.034
+TER: 0.3
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 753
+Packets received incorrectly: 23
+BER: 1.698759 %
+Max BER: 2.906977 %
+Average retransmission count: 0.386454
+Average packet delay: 8.287493 ms
+Average packet waiting exit from bufor: 8.418507 ms
+Bit rate: 30.120000 b/s
+
+Lambda: 0.034
+TER: 0.35
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 706
+Packets received incorrectly: 37
+BER: 3.067621 %
+Max BER: 4.597701 %
+Average retransmission count: 0.466006
+Average packet delay: 8.444265 ms
+Average packet waiting exit from bufor: 8.962874 ms
+Bit rate: 28.240000 b/s
+
+Lambda: 0.034
+TER: 0.4
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 678
+Packets received incorrectly: 48
+BER: 4.817448 %
+Max BER: 6.707317 %
+Average retransmission count: 0.498525
+Average packet delay: 9.642588 ms
+Average packet waiting exit from bufor: 10.216199 ms
+Bit rate: 27.120000 b/s
+
+Lambda: 0.034
+TER: 0.45
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 607
+Packets received incorrectly: 69
+BER: 7.382260 %
+Max BER: 11.184211 %
+Average retransmission count: 0.532125
+Average packet delay: 9.123025 ms
+Average packet waiting exit from bufor: 10.206519 ms
+Bit rate: 24.280000 b/s
+
+Lambda: 0.034
+TER: 0.5
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 559
+Packets received incorrectly: 84
+BER: 10.385489 %
+Max BER: 15.267176 %
+Average retransmission count: 0.542039
+Average packet delay: 10.296297 ms
+Average packet waiting exit from bufor: 11.754977 ms
+Bit rate: 22.360000 b/s
+
+Lambda: 0.034
+TER: 0.55
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 489
+Packets received incorrectly: 97
+BER: 14.075579 %
+Max BER: 19.254658 %
+Average retransmission count: 0.656442
+Average packet delay: 10.405454 ms
+Average packet waiting exit from bufor: 12.456771 ms
+Bit rate: 19.560000 b/s
+
+Lambda: 0.034
+TER: 0.6
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 458
+Packets received incorrectly: 120
+BER: 19.143879 %
+Max BER: 22.222222 %
+Average retransmission count: 0.670306
+Average packet delay: 10.403668 ms
+Average packet waiting exit from bufor: 12.894153 ms
+Bit rate: 18.320000 b/s
+
+Lambda: 0.034
+TER: 0.65
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 368
+Packets received incorrectly: 165
+BER: 29.548220 %
+Max BER: 36.111111 %
+Average retransmission count: 0.722826
+Average packet delay: 10.986973 ms
+Average packet waiting exit from bufor: 16.117497 ms
+Bit rate: 14.720000 b/s
+
+Lambda: 0.034
+TER: 0.7
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 314
+Packets received incorrectly: 197
+BER: 42.392775 %
+Max BER: 48.936170 %
+Average retransmission count: 0.786624
+Average packet delay: 10.706586 ms
+Average packet waiting exit from bufor: 17.805111 ms
+Bit rate: 12.560000 b/s
+
+Lambda: 0.034
+TER: 0.75
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 284
+Packets received incorrectly: 208
+BER: 55.402481 %
+Max BER: 68.181818 %
+Average retransmission count: 0.809859
+Average packet delay: 11.372504 ms
+Average packet waiting exit from bufor: 19.194077 ms
+Bit rate: 11.360000 b/s
+
+Lambda: 0.034
+TER: 0.8
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 223
+Packets received incorrectly: 224
+BER: 73.360399 %
+Max BER: 88.135593 %
+Average retransmission count: 0.946188
+Average packet delay: 10.499735 ms
+Average packet waiting exit from bufor: 21.646404 ms
+Bit rate: 8.920000 b/s
+
+Lambda: 0.034
+TER: 0.85
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 168
+Packets received incorrectly: 275
+BER: 107.086612 %
+Max BER: 136.000000 %
+Average retransmission count: 0.898810
+Average packet delay: 11.077298 ms
+Average packet waiting exit from bufor: 29.842774 ms
+Bit rate: 6.720000 b/s
+
+Lambda: 0.034
+TER: 0.9
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 126
+Packets received incorrectly: 297
+BER: 154.755750 %
+Max BER: 195.238095 %
+Average retransmission count: 0.936508
+Average packet delay: 11.578270 ms
+Average packet waiting exit from bufor: 37.547119 ms
+Bit rate: 5.040000 b/s
+
+Lambda: 0.034
+TER: 0.95
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 53
+Packets received incorrectly: 341
+BER: 265.983171 %
+Max BER: 300.000000 %
+Average retransmission count: 0.867925
+Average packet delay: 10.190736 ms
+Average packet waiting exit from bufor: 84.199000 ms
+Bit rate: 2.120000 b/s
+
+Lambda: 0.034
+TER: 1
+Total simulation time: 2500 ms
+Initial phase time: 60
+Packet of seed: 2
+Packets received properly: 0
+Packets received incorrectly: 380
+BER: 601.796050 %
+Max BER: 658.823529 %
+Average retransmission count: 0
+Average packet delay: 0 ms
+Average packet waiting exit from bufor: 0 ms
+Bit rate: 0.000000 b/s
 

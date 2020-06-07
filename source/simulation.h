@@ -55,7 +55,7 @@ private:
   bool waiting_channel_busy_ = false;
   std::vector<Packet*> packets_received_;
   std::vector<Packet*> packets_not_received_;
-  double lambda_ = 0.01;
+  double lambda_ = 0.034;
   double ter_probability_ = 0.3;
   size_t initial_phase_time_ = 0;
   size_t retransmission_count_ = 0;

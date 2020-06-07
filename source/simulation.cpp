@@ -5,7 +5,8 @@
 #include "generator.h"
 
 std::ofstream output_file("statistics_for_a_few_simulations.txt", std::ios_base::app);
-std::ofstream output_file_5ms("statistics_after_5ms.txt", std::ios_base::app);
+//std::ofstream output_file_5ms("statistics_after_5ms.txt", std::ios_base::app);
+//std::ofstream ber_phase("ber.txt", std::ios_base::app);
 
 Simulation::Simulation(CsmaNetwork* network, Channel* channel_of_network, SimulationTime* supervision_of_simulation_time, Logger* logger, Generator* generator, int packed_seed)
 {
@@ -39,7 +40,7 @@ void Simulation::Execute()
 
   std::cout << "Choose what you want to change: " << std::endl;
   std::cout << "1 - lambda" << std::endl;
-  std::cout << "2 - initial phase time" << std::endl;
+  std::cout << "2 - TER probability" << std::endl;
   std::cout << "3 - nothing to change" << std::endl;
 
   while (changing < 1 || changing > 3)
@@ -50,11 +51,19 @@ void Simulation::Execute()
   output_file << '\n' << "---- NEW SIMULATION ----" << std::endl;
   output_file << '\n';
 
-  output_file_5ms << '\n' << "---- NEW SIMULATION ----" << std::endl;
-  output_file_5ms << '\n';
-
+  
   for (int i = 0; i < number_of_simulation; ++i)
   {
+    /*output_file_5ms << '\n' << "---- NEW SIMULATION ----" << std::endl;
+    output_file_5ms << '\n';
+
+    ber_phase << '\n' << "---- NEW SIMULATION ----" << std::endl;
+    ber_phase << "Lambda: " << lambda_ << '\n';
+    ber_phase << "Total simulation time: " << supervision_of_simulation_time_->return_total_time() / 10 << " ms" << '\n';
+    ber_phase << "Initial phase time: " << initial_phase_time_ / 10 << '\n';
+    ber_phase << "Packet of seed: " << std::to_string(seed) << '\n';
+    ber_phase << '\n';*/
+
     Initialize();
     
     //starting simulation
@@ -219,11 +228,11 @@ void Simulation::Execute()
         }
       }
 
-      if (supervision_of_simulation_time_->return_time_now() == time_statistics)
+      /*if (supervision_of_simulation_time_->return_time_now() == time_statistics)
       {
         time_statistics += 50;
         SaveStatistics_5ms();
-      }
+      }*/
 
       UpdateClock();
 
@@ -241,7 +250,7 @@ void Simulation::Execute()
     if (changing == 1)
       lambda_ += 0.002;
     else if(changing == 2)
-      initial_phase_time_ += 50;
+      ter_probability_ += 0.05;
   }
 
   std::getchar();
@@ -512,6 +521,7 @@ void Simulation::SaveStatistics()
 
   
   output_file << "Lambda: " << lambda_ << '\n';
+  output_file << "TER: " << ter_probability_ << '\n';
   output_file << "Total simulation time: " << supervision_of_simulation_time_->return_total_time()/10 << " ms" << '\n';
   output_file << "Initial phase time: " << initial_phase_time_/10 << '\n';
   output_file << "Packet of seed: " << std::to_string(seed) << '\n';
@@ -525,19 +535,21 @@ void Simulation::SaveStatistics()
     output_file << "Average retransmission count: " + std::to_string(0) << '\n';
     output_file << "Average packet delay: " + std::to_string(0) + " ms" << '\n';
     output_file << "Average packet waiting exit from bufor: " + std::to_string(0) + " ms" << '\n';
+    //ber_phase << std::to_string(0) << '\n';
   }
   else
   {
     output_file << "Average retransmission count: " + std::to_string((double)retransmission_count_ / (double)packets_received_.size()) << '\n';
     output_file << "Average packet delay: " + std::to_string(((double)average_delay_packet_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
     output_file << "Average packet waiting exit from bufor: " + std::to_string(((double)average_waiting_packet_exit_from_bufor_ / (double)packets_received_.size()) / 1000) + " ms" << '\n';
+    //ber_phase << std::to_string((double)retransmission_count_ / (double)packets_received_.size()) << '\n';
   }
 
   output_file << "Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s" << '\n';
   output_file << '\n';
 }
 
-void Simulation::SaveStatistics_5ms()
+/*void Simulation::SaveStatistics_5ms()
 {
   logger_ = new Logger("Statistics.txt");
 
@@ -600,7 +612,7 @@ void Simulation::SaveStatistics_5ms()
 
   output_file_5ms << "Bit rate: " + std::to_string(((double)packets_received_.size() / (double)supervision_of_simulation_time_->return_total_time()) * 1000) + " b/s" << '\n';
   output_file_5ms << '\n';
-}
+}*/
 
 bool Simulation::CanStartTransmission()
 {
